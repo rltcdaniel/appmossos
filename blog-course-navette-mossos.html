@@ -60,6 +60,15 @@ tr:last-child td{border-bottom:none}
 .cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;font-weight:800;font-size:15px;padding:14px 28px;border-radius:12px;text-decoration:none}
 footer{background:white;border-top:1px solid #e2e8f0;padding:28px 24px;text-align:center;font-size:13px;color:#94a3b8}
 footer a{color:var(--blue);text-decoration:none}
+
+.related-articles{background:white;border-radius:18px;border:1px solid #e2e8f0;padding:28px;margin:40px 0}
+.related-title{font-size:16px;font-weight:800;color:#1e293b;margin-bottom:18px}
+.related-grid{display:flex;flex-direction:column;gap:12px}
+.related-card{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;padding:12px;border-radius:12px;border:1px solid #f1f5f9;transition:background .15s}
+.related-card:hover{background:#f8fafc}
+.related-icon{width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.related-card-title{font-size:14px;font-weight:700;color:#1e293b;margin-bottom:3px}
+.related-card-desc{font-size:12px;color:#64748b}
 </style>
 </head>
 <body>
@@ -200,6 +209,27 @@ footer a{color:var(--blue);text-decoration:none}
     <li><strong>Course navette / Cursa llançadora</strong> (40%) — Valora la resistència aeròbica</li>
   </ul>
   <p>Les proves físiques se celebren <strong>després de superar la prova de coneixements teòrics</strong> (els exàmens tipus test dels Blocs A, B i C). Per tant, la preparació teòrica és el primer pas imprescindible.</p>
+
+
+  <div class="related-articles">
+    <div class="related-title">📚 Articles relacionats sobre les proves físiques</div>
+    <div class="related-grid">
+            <a href="https://mossosprep.cat/blog-circuit-agilitat-mossos.html" class="related-card">
+        <div class="related-icon">⚡</div>
+        <div>
+          <div class="related-card-title">Circuit d'Agilitat dels Mossos d'Esquadra</div>
+          <div class="related-card-desc">Recorregut oficial, obstacles, barems i consells per millorar el temps</div>
+        </div>
+      </a>
+      <a href="https://mossosprep.cat/blog-press-banca-mossos.html" class="related-card">
+        <div class="related-icon">💪</div>
+        <div>
+          <div class="related-card-title">Pressió sobre Banc dels Mossos d'Esquadra</div>
+          <div class="related-card-desc">Barems de repeticions, tècnica i errors a evitar en el press banca</div>
+        </div>
+      </a>
+    </div>
+  </div>
 
   <div class="cta-box">
     <div class="cta-title">🛡️ Prepara la part teòrica amb MossosPrep</div>
