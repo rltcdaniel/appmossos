@@ -6100,26 +6100,6 @@ function activateSubscriber() {
 }
 
 
-  const email = document.getElementById('premium-email').value.trim();
-  const msg   = document.getElementById('premium-msg');
-  if (!email || !email.includes('@')) {
-    msg.textContent = 'Introdueix un correu vàlid.';
-    msg.style.color = '#dc2626';
-    return;
-  }
-  // Simple activation: store premium flag locally
-  // In production this should verify against Stripe API
-  try {
-    localStorage.setItem('mossos_premium', 'true');
-    localStorage.setItem('mossos_premium_email', email);
-  } catch {}
-  msg.textContent = '✓ Accés premium activat!';
-  msg.style.color = '#16a34a';
-  setTimeout(() => {
-    showPage('home');
-  }, 1200);
-}
-
 function renderHomeLockBadge(bloc) {
   if (isPremium()) return '';
   const lockedBlocs = ['Bloc B', 'Bloc C', 'Simulacres', 'Exàmens Reals', 'Actualitat'];
