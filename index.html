@@ -824,7 +824,7 @@ if ('serviceWorker' in navigator) {
   <div style="border-top:2px solid var(--slate-200);margin-top:16px;padding:24px 20px 36px;background:white">
     <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--slate-400);text-align:center;margin-bottom:16px">MossosPrep</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-      <a href="https://mossosprep.cat/landing.html" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;background:var(--slate-100);border-radius:10px;font-size:13px;font-weight:700;color:var(--slate-600);text-decoration:none">
+      <a href="https://mossosprep.cat" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;background:var(--slate-100);border-radius:10px;font-size:13px;font-weight:700;color:var(--slate-600);text-decoration:none">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
         Inici web
       </a>
@@ -5604,39 +5604,7 @@ function renderExam() {
   const pct     = Math.round((current / total) * 100);
 
   document.getElementById('exam-header-title').textContent = theme.title;
-  // Show ads for free users based on total questions
-  // 25q → 1 ad (at q13), 50q → 2 ads (at q17, q34), 100q → 4 ads (at q20,40,60,80)
-  if (!isPremium()) {
-    const total = session.questions.length;
-    const idx   = session.currentIndex;
-    let adBreaks = [];
-    if (total <= 30)       adBreaks = [Math.floor(total / 2)];
-    else if (total <= 55)  adBreaks = [Math.floor(total / 3), Math.floor(total * 2 / 3)];
-    else                   adBreaks = [20, 40, 60, 80];
-
-    if (adBreaks.includes(idx)) {
-      // Remove old ad containers and insert fresh ones
-      document.querySelectorAll('.ad-exam-slot').forEach(el => el.remove());
-      const card = document.getElementById('question-card');
-      if (card) {
-        const adDiv = document.createElement('div');
-        adDiv.className = 'ad-exam-slot ad-container';
-        adDiv.innerHTML = `<div class="ad-label">Publicitat</div>
-          <ins class="adsbygoogle" style="display:block"
-            data-ad-client="ca-pub-6071705220271253"
-            data-ad-slot="auto"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>`;
-        card.parentNode.insertBefore(adDiv, card);
-        try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
-      }
-    } else {
-      // Remove exam ad if not at a break point
-      document.querySelectorAll('.ad-exam-slot').forEach(el => el.remove());
-    }
-  } else {
-    document.querySelectorAll('.ad-exam-slot').forEach(el => el.remove());
-  }
+  // Ads managed by Google AdSense automatically
   document.getElementById('exam-theme-label').textContent  = `${theme.bloc} · ${theme.title}`;
   document.getElementById('progress-label').textContent    = `Pregunta ${current} de ${total}`;
   document.getElementById('progress-pct').textContent      = `${pct}%`;
