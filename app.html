@@ -1219,7 +1219,8 @@ function onboardingNext() {
   document.getElementById('ob-icon').textContent  = s.icon;
   document.getElementById('ob-title').textContent = s.title;
   document.getElementById('ob-desc').textContent  = s.desc;
-  document.getElementById('ob-btn').textContent   = _obStep === ONBOARDING_STEPS.length - 1 ? 'Començar ara' : 'Següent';
+  const isLast = _obStep === ONBOARDING_STEPS.length - 1;
+  document.getElementById('ob-btn').textContent = isLast ? '🚀 Començar ara' : 'Següent →';
   ONBOARDING_STEPS.forEach((_, i) => {
     const dot = document.getElementById(`ob-dot-${i}`);
     if (dot) dot.classList.toggle('active', i === _obStep);
@@ -1319,12 +1320,11 @@ function showPremiumWall() {
 function closeSplash() {
   document.getElementById('splash').classList.add('hidden');
   try { localStorage.setItem('mossos_splash_seen', 'true'); } catch {}
-  // Only show onboarding if user hasn't dismissed it with "no tornar a mostrar"
+  // Always show onboarding unless user marked "no tornar a mostrar"
   try {
-    if (!localStorage.getItem('mossos_onboarding_done')) {
-      setTimeout(showOnboarding, 400);
-    }
+    if (localStorage.getItem('mossos_onboarding_done')) return;
   } catch {}
+  showOnboarding();
 }
 
 // Show splash only on first visit
