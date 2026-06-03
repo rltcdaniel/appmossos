@@ -1319,8 +1319,12 @@ function showPremiumWall() {
 function closeSplash() {
   document.getElementById('splash').classList.add('hidden');
   try { localStorage.setItem('mossos_splash_seen', 'true'); } catch {}
-  // Show onboarding after splash (first time only)
-  setTimeout(showOnboarding, 400);
+  // Only show onboarding if user hasn't dismissed it with "no tornar a mostrar"
+  try {
+    if (!localStorage.getItem('mossos_onboarding_done')) {
+      setTimeout(showOnboarding, 400);
+    }
+  } catch {}
 }
 
 // Show splash only on first visit
