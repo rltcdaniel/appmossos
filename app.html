@@ -9,67 +9,19 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mossos OPE">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23003087'/><text y='.9em' font-size='70' x='50%' text-anchor='middle'>🛡️</text></svg>">
-<link rel="manifest" id="pwa-manifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6071705220271253" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Nunito+Sans:wght@800;900&display=swap" rel="stylesheet">
-<script>
-// ─── PWA MANIFEST (inline, no server needed) ─────────────────────────────────
-const manifest = {
-  name: "MossosPrep",
-  short_name: "MossosPrep",
-  description: "Tests oficials per preparar les oposicions dels Mossos d'Esquadra",
-  start_url: ".",
-  display: "standalone",
-  background_color: "#f8fafc",
-  theme_color: "#003087",
-  orientation: "portrait",
-  icons: [
-    { src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='40' fill='%23003087'/><text y='.85em' font-size='130' x='50%' text-anchor='middle'>🛡️</text></svg>", sizes: "192x192", type: "image/svg+xml" },
-    { src: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%23003087'/><text y='.85em' font-size='350' x='50%' text-anchor='middle'>🛡️</text></svg>", sizes: "512x512", type: "image/svg+xml" }
-  ]
-};
-const blob = new Blob([JSON.stringify(manifest)], {type:'application/json'});
-document.getElementById('pwa-manifest').href = URL.createObjectURL(blob);
 
-// ─── SERVICE WORKER (offline cache) ──────────────────────────────────────────
-if ('serviceWorker' in navigator) {
-  const swCode = `
-    const CACHE = 'mossos-v1';
-    const FONTS = [
-      'https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Nunito+Sans:wght@800;900&display=swap'
-    ];
-    self.addEventListener('install', e => {
-      e.waitUntil(caches.open(CACHE).then(c => c.addAll(FONTS).catch(()=>{})));
-      self.skipWaiting();
-    });
-    self.addEventListener('activate', e => {
-      e.waitUntil(caches.keys().then(keys =>
-        Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-      ));
-      self.clients.claim();
-    });
-    self.addEventListener('fetch', e => {
-      if (e.request.method !== 'GET') return;
-      e.respondWith(
-        caches.match(e.request).then(cached => {
-          if (cached) return cached;
-          return fetch(e.request).then(res => {
-            if (res.ok && (e.request.url.includes('fonts.g') || e.request.url.includes('fonts.gstatic'))) {
-              caches.open(CACHE).then(c => c.put(e.request, res.clone()));
-            }
-            return res;
-          }).catch(() => cached);
-        })
-      );
-    });
-  `;
-  const swBlob = new Blob([swCode], {type:'application/javascript'});
-  navigator.serviceWorker.register(URL.createObjectURL(swBlob), {type:'classic'})
-    .catch(() => {}); // fails on some browsers with blob SW, graceful degradation
-}
-</script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   :root{
@@ -786,7 +738,7 @@ if ('serviceWorker' in navigator) {
   <div class="splash-tagline">La preparació definitiva per aprovar les oposicions dels Mossos d'Esquadra de Catalunya.</div>
   <button class="splash-btn" onclick="closeSplash()">Començar ara</button>
   <div class="splash-sub">+3.500 preguntes oficials · Blocs A, B i C</div>
-  <button onclick="closeSplash();setTimeout(()=>{showPage('premium')},300)" style="margin-top:16px;background:none;border:none;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-decoration:underline">
+  <button onclick="closeSplash();setTimeout(()=>showPage('subscriber'),300)" style="margin-top:16px;background:none;border:none;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-decoration:underline">
     Ja ets subscriptor? Activa el teu accés
   </button>
 </div>
@@ -898,6 +850,33 @@ if ('serviceWorker' in navigator) {
   <div class="stats-content" id="stats-content"></div>
 </div>
 
+<!-- ══════════════════════════════════════════════════ LOGIN SUBSCRIPTOR ══ -->
+<div id="page-subscriber" class="page">
+  <header class="header">
+    <button class="back-btn" onclick="showPage('home')">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      Inici
+    </button>
+    <span class="header-title">Accés subscriptor</span>
+  </header>
+  <div style="padding:32px 20px;max-width:480px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:32px">
+      <div style="font-size:48px;margin-bottom:16px">🔑</div>
+      <h2 style="font-size:22px;font-weight:800;color:var(--slate-800);margin-bottom:8px">Ja ets subscriptor?</h2>
+      <p style="font-size:15px;color:var(--slate-500);line-height:1.6">Introdueix el correu amb el qual vas subscriure't a MossosPrep per activar l'accés premium al teu dispositiu.</p>
+    </div>
+    <div style="background:white;border:1.5px solid var(--slate-200);border-radius:18px;padding:24px">
+      <label style="font-size:13px;font-weight:700;color:var(--slate-700);display:block;margin-bottom:8px">Correu electrònic</label>
+      <input type="email" id="subscriber-email" placeholder="correu@exemple.com" style="width:100%;padding:14px;border:1.5px solid var(--slate-200);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;margin-bottom:14px;box-sizing:border-box;outline:none" onfocus="this.style.borderColor='#003087'" onblur="this.style.borderColor='#e2e8f0'">
+      <button onclick="activateSubscriber()" style="width:100%;padding:16px;background:linear-gradient(135deg,#1e1b4b,#312e81);color:white;border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-weight:800;font-size:16px;cursor:pointer;transition:opacity .15s">
+        🔓 Activar accés Premium
+      </button>
+      <p style="font-size:12px;color:var(--slate-400);margin-top:12px;text-align:center" id="subscriber-msg"></p>
+    </div>
+    <p style="font-size:12px;color:var(--slate-400);text-align:center;margin-top:20px;line-height:1.6">Si no recordes el correu o tens problemes per activar l'accés, contacta'ns a <strong>rltc.daniel@gmail.com</strong></p>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════════════ PREMIUM ══════════ -->
 <div id="page-premium" class="page">
   <header class="header">
@@ -906,7 +885,7 @@ if ('serviceWorker' in navigator) {
       Inici
     </button>
     <span class="header-title">Premium</span>
-    <button onclick="document.getElementById('premium-login').scrollIntoView({behavior:'smooth'})" style="background:#312e81;border:2px solid #f59e0b;color:#f59e0b;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:800;padding:8px 14px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:5px;box-shadow:0 2px 8px rgba(49,46,129,.5)">
+    <button onclick="showPage('subscriber')" style="background:#312e81;border:2px solid #f59e0b;color:#f59e0b;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:800;padding:8px 14px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:5px;box-shadow:0 2px 8px rgba(49,46,129,.5)">
       🔑 Ja soc subscriptor
     </button>
   </header>
@@ -937,8 +916,8 @@ if ('serviceWorker' in navigator) {
     <div id="premium-login" style="background:#f8fafc;border-radius:14px;padding:16px;margin-top:12px">
       <p style="font-size:13px;font-weight:700;color:var(--slate-700);margin-bottom:8px">Ja ets subscriptor?</p>
       <p style="font-size:12px;color:var(--slate-500);margin-bottom:12px">Introdueix el correu amb el qual vas subscriure't per activar l'accés premium.</p>
-      <input type="email" id="premium-email" placeholder="correu@exemple.com" style="width:100%;padding:12px;border:1.5px solid var(--slate-200);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;margin-bottom:10px;box-sizing:border-box">
-      <button onclick="activatePremium()" style="width:100%;padding:12px;background:var(--blue);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;cursor:pointer">Activar accés</button>
+      <input type="email" id="premium-email-old" placeholder="correu@exemple.com" style="width:100%;padding:12px;border:1.5px solid var(--slate-200);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;margin-bottom:10px;box-sizing:border-box">
+      <button onclick="activateSubscriber()" style="width:100%;padding:12px;background:var(--blue);color:white;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;cursor:pointer">Activar accés</button>
       <p style="font-size:11px;color:var(--slate-400);margin-top:8px;text-align:center" id="premium-msg"></p>
     </div>
   </div>
@@ -5238,7 +5217,7 @@ function renderHome() {
   const bannerEl = document.getElementById('subscriber-banner');
   if (bannerEl) {
     if (!isPremium()) {
-      bannerEl.innerHTML = `<div onclick="showPage('premium')" style="display:flex;align-items:center;gap:10px;margin:4px 16px 12px;padding:12px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:12px;cursor:pointer;transition:background .15s" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='#eff6ff'">
+      bannerEl.innerHTML = `<div onclick="showPage('subscriber')" style="display:flex;align-items:center;gap:10px;margin:4px 16px 12px;padding:12px 16px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:12px;cursor:pointer;transition:background .15s" onmouseover="this.style.background='#dbeafe'" onmouseout="this.style.background='#eff6ff'">
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#2563eb" stroke-width="2" flex-shrink="0"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
         <div style="flex:1">
           <div style="font-size:13px;font-weight:700;color:#1d4ed8">Ja ets subscriptor?</div>
@@ -6103,7 +6082,24 @@ function showToast(msg) {
   setTimeout(() => { t.style.opacity = '0'; }, 2500);
 }
 
-function activatePremium() {
+function activateSubscriber() {
+  const email = document.getElementById('subscriber-email').value.trim();
+  const msg   = document.getElementById('subscriber-msg');
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Introdueix un correu vàlid.';
+    msg.style.color = '#dc2626';
+    return;
+  }
+  try {
+    localStorage.setItem('mossos_premium', 'true');
+    localStorage.setItem('mossos_premium_email', email);
+  } catch {}
+  msg.textContent = '✓ Accés premium activat!';
+  msg.style.color = '#16a34a';
+  setTimeout(() => showPage('home'), 1200);
+}
+
+
   const email = document.getElementById('premium-email').value.trim();
   const msg   = document.getElementById('premium-msg');
   if (!email || !email.includes('@')) {
