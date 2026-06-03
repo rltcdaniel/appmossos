@@ -2,7 +2,7 @@
   "name": "Mossos d'Esquadra — Oposicions",
   "short_name": "Mossos OPE",
   "description": "Prepara les oposicions dels Mossos d'Esquadra amb +3000 preguntes oficials dels blocs A, B i C.",
-  "start_url": "./index.html",
+  "start_url": "./app.html",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#003087",
