@@ -906,6 +906,9 @@ if ('serviceWorker' in navigator) {
       Inici
     </button>
     <span class="header-title">Premium</span>
+    <button onclick="document.getElementById('premium-login').scrollIntoView({behavior:'smooth'})" style="background:#312e81;border:2px solid #f59e0b;color:#f59e0b;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:800;padding:8px 14px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:5px;box-shadow:0 2px 8px rgba(49,46,129,.5)">
+      🔑 Ja soc subscriptor
+    </button>
   </header>
   <div style="padding:20px">
     <div class="premium-lock">
@@ -931,7 +934,7 @@ if ('serviceWorker' in navigator) {
       <p style="font-size:11px;opacity:.6;margin-top:16px">1 dia de prova gratuïta · Pagament segur amb Stripe · Targeta o Bizum</p><p style="font-size:11px;color:#fbbf24;margin-top:8px;opacity:.9">✓ Els anuncis desapareixen en activar la subscripció</p>
       <p style="margin-top:16px"><a href="https://mossosprep.cat/cancel.html" style="font-size:11px;color:rgba(255,255,255,.4);text-decoration:underline">Cancel·lar subscripció</a></p>
     </div>
-    <div style="background:#f8fafc;border-radius:14px;padding:16px;margin-top:12px">
+    <div id="premium-login" style="background:#f8fafc;border-radius:14px;padding:16px;margin-top:12px">
       <p style="font-size:13px;font-weight:700;color:var(--slate-700);margin-bottom:8px">Ja ets subscriptor?</p>
       <p style="font-size:12px;color:var(--slate-500);margin-bottom:12px">Introdueix el correu amb el qual vas subscriure't per activar l'accés premium.</p>
       <input type="email" id="premium-email" placeholder="correu@exemple.com" style="width:100%;padding:12px;border:1.5px solid var(--slate-200);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;margin-bottom:10px;box-sizing:border-box">
