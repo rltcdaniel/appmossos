@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18212325013">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18212325013');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MossosPrep — Prepara i Aprova les Oposicions dels Mossos d'Esquadra 2025</title>
@@ -28,11 +37,11 @@ body{font-family:'DM Sans',sans-serif;background:#0a0f1e;color:white;overflow-x:
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,15,30,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
 .nav-logo{font-family:'Nunito Sans',sans-serif;font-size:20px;font-weight:900;color:white;text-decoration:none}
 .nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:8px}
-.nav-link{color:rgba(255,255,255,.65);text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;border-radius:8px;transition:all .2s}
-.nav-link:hover{color:white;background:rgba(255,255,255,.08)}
-.nav-cta{background:var(--gold);color:#000;font-weight:800;font-size:13px;padding:8px 18px;border-radius:10px;text-decoration:none;transition:opacity .15s}
-.nav-cta:hover{opacity:.85}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-link{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;font-weight:700;padding:8px 16px;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);transition:all .2s;background:rgba(255,255,255,.04)}
+.nav-link:hover{color:white;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+.nav-cta{background:linear-gradient(135deg,var(--gold),#f97316);color:#000;font-weight:800;font-size:14px;padding:9px 20px;border-radius:10px;text-decoration:none;transition:all .15s;box-shadow:0 4px 12px rgba(245,158,11,.35)}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(245,158,11,.5)}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 60px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#020c1f 0%,#001540 45%,#0f0305 100%)}
@@ -88,9 +97,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:fl
 .bloc-tag{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:8px}
 .bloc-name{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:900;margin-bottom:6px}
 .bloc-info{font-size:12px;opacity:.65}
-.bloc-topics{margin-top:14px;display:flex;flex-direction:column;gap:5px}
-.bloc-topic{font-size:12px;opacity:.6;display:flex;align-items:center;gap:5px}
-.bloc-topic::before{content:"›";color:var(--gold);font-size:14px}
+.bloc-topics{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+.bloc-topic{font-size:12px;opacity:.75;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border-radius:7px;padding:6px 10px}
+.bloc-topic::before{content:"›";color:var(--gold);font-size:14px;font-weight:800;flex-shrink:0}
 
 /* ── PRICING ── */
 .pricing-wrap{max-width:480px;margin:0 auto;text-align:center}
@@ -140,9 +149,9 @@ footer a:hover{color:var(--gold)}
 <nav>
   <a href="https://mossosprep.cat/landing.html" class="nav-logo">Mossos<span>Prep</span></a>
   <div class="nav-links">
-    <a href="https://mossosprep.cat/blog.html" class="nav-link">Blog</a>
-    <a href="https://mossosprep.cat/sobre.html" class="nav-link">Sobre</a>
-    <a href="https://mossosprep.cat/app.html" class="nav-cta">Accedir a l'app →</a>
+    <a href="https://mossosprep.cat/blog.html" class="nav-link">📝 Blog</a>
+    <a href="https://mossosprep.cat/sobre.html" class="nav-link">ℹ️ Sobre nosaltres</a>
+    <a href="https://mossosprep.cat/app.html" class="nav-cta">🛡️ Accedir a l'app</a>
   </div>
 </nav>
 
@@ -206,10 +215,13 @@ footer a:hover{color:var(--gold)}
         <div class="bloc-name">Àmbit de l'entorn</div>
         <div class="bloc-info">7 temes · 950 preguntes</div>
         <div class="bloc-topics">
-          <div class="bloc-topic">Història de Catalunya I i II</div>
-          <div class="bloc-topic">Àmbit sociolingüístic</div>
-          <div class="bloc-topic">Geografia · Entorn social</div>
-          <div class="bloc-topic">Tecnologies de la informació</div>
+          <div class="bloc-topic">A.1. Història de Catalunya (Part I)</div>
+          <div class="bloc-topic">A.2. Història de Catalunya (Part II)</div>
+          <div class="bloc-topic">A.3. Història de la policia a Catalunya</div>
+          <div class="bloc-topic">A.4. Àmbit sociolingüístic</div>
+          <div class="bloc-topic">A.5. Geografia de Catalunya</div>
+          <div class="bloc-topic">A.6. Entorn social a Catalunya</div>
+          <div class="bloc-topic">A.7. Les tecnologies de la informació</div>
         </div>
       </div>
       <div class="bloc bloc-b">
@@ -217,10 +229,14 @@ footer a:hover{color:var(--gold)}
         <div class="bloc-name">Àmbit institucional</div>
         <div class="bloc-info">8 temes · 1.150 preguntes</div>
         <div class="bloc-topics">
-          <div class="bloc-topic">EAC · Institucions catalanes</div>
-          <div class="bloc-topic">Drets humans i constitucionals</div>
-          <div class="bloc-topic">Ordenament jurídic</div>
-          <div class="bloc-topic">La Unió Europea</div>
+          <div class="bloc-topic">B.1. L'Estatut d'autonomia de Catalunya</div>
+          <div class="bloc-topic">B.2. Les institucions polítiques de Catalunya</div>
+          <div class="bloc-topic">B.3. L'ordenament jurídic de l'Estat</div>
+          <div class="bloc-topic">B.4. Els drets humans i constitucionals</div>
+          <div class="bloc-topic">B.5. Les institucions polítiques de l'Estat</div>
+          <div class="bloc-topic">B.6. Els òrgans jurisdiccionals</div>
+          <div class="bloc-topic">B.7. L'organització territorial de l'Estat</div>
+          <div class="bloc-topic">B.8. La Unió Europea</div>
         </div>
       </div>
       <div class="bloc bloc-c">
@@ -228,10 +244,11 @@ footer a:hover{color:var(--gold)}
         <div class="bloc-name">Àmbit policial</div>
         <div class="bloc-info">5 temes · 650 preguntes</div>
         <div class="bloc-topics">
-          <div class="bloc-topic">Competències Generalitat</div>
-          <div class="bloc-topic">Departament d'Interior</div>
-          <div class="bloc-topic">Marc legal · Deontologia</div>
-          <div class="bloc-topic">Coordinació policial</div>
+          <div class="bloc-topic">C.1. Competències de la Generalitat en seguretat</div>
+          <div class="bloc-topic">C.2. El Departament d'Interior i Seguretat Pública</div>
+          <div class="bloc-topic">C.3. La coordinació policial</div>
+          <div class="bloc-topic">C.4. El marc legal de la seguretat</div>
+          <div class="bloc-topic">C.5. El codi deontològic policial</div>
         </div>
       </div>
     </div>
