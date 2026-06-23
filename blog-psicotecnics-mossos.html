@@ -40,11 +40,14 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--blue:#003087;--red:#E30613;--gold:#f59e0b}
 body{font-family:'DM Sans',sans-serif;background:#f8fafc;color:#1e293b}
-.site-header{background:var(--blue);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.site-header{background:var(--blue);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.15)}
 .site-logo{font-family:'Nunito Sans',sans-serif;font-size:20px;font-weight:900;color:white;text-decoration:none}
 .site-logo span{color:var(--gold)}
-.site-nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:600;margin-left:20px}
-.site-nav a:hover{color:white}
+.site-nav{display:flex;align-items:center;gap:8px}
+.site-nav a.nav-link{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;border-radius:8px;transition:all .2s}
+.site-nav a.nav-link:hover{color:white;background:rgba(255,255,255,.1)}
+.site-nav a.nav-cta{background:linear-gradient(135deg,var(--gold),#f97316);color:#000;font-weight:800;font-size:14px;padding:9px 20px;border-radius:10px;text-decoration:none;transition:all .2s;box-shadow:0 3px 10px rgba(245,158,11,.4);display:flex;align-items:center;gap:6px}
+.site-nav a.nav-cta:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(245,158,11,.55)}
 .article-hero{background:linear-gradient(135deg,#001f5c,#003087);padding:56px 24px 44px;color:white}
 .article-hero-inner{max-width:760px;margin:0 auto}
 .article-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;margin-bottom:20px}
@@ -84,15 +87,22 @@ body{font-family:'DM Sans',sans-serif;background:#f8fafc;color:#1e293b}
 footer{background:white;border-top:1px solid #e2e8f0;padding:28px 24px;text-align:center;font-size:13px;color:#94a3b8}
 footer a{color:var(--blue);text-decoration:none}
 @media(max-width:600px){.aptitud-grid{grid-template-columns:1fr}}
+
+.sticky-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#003087,#0047b3);padding:14px 20px;z-index:200;box-shadow:0 -4px 20px rgba(0,0,0,.2)}
+.sticky-banner-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-banner p{font-size:13px;color:rgba(255,255,255,.85);margin:0;line-height:1.4}
+.sticky-banner p strong{color:white}
+.sticky-banner a{background:var(--gold);color:#000;font-weight:800;font-size:13px;padding:10px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+@media(max-width:700px){.sticky-banner{display:block}}
 </style>
 </head>
 <body>
 <header class="site-header">
   <a href="https://mossosprep.cat" class="site-logo">Mossos<span>Prep</span></a>
   <nav class="site-nav">
-    <a href="https://mossosprep.cat/app.html">App</a>
-    <a href="https://mossosprep.cat/blog.html">Blog</a>
-    <a href="https://mossosprep.cat/sobre.html">Sobre</a>
+    <a href="https://mossosprep.cat/blog.html" class="nav-link">Blog</a>
+    <a href="https://mossosprep.cat/sobre.html" class="nav-link">Sobre</a>
+    <a href="https://mossosprep.cat/app.html" class="nav-cta">🛡️ Accedir a l'app</a>
   </nav>
 </header>
 
