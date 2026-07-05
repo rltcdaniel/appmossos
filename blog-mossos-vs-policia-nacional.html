@@ -66,9 +66,33 @@ footer a{color:var(--blue);text-decoration:none}
 .sticky-banner p strong{color:#000}
 .sticky-banner a{background:#003087;color:white;font-weight:800;font-size:13px;padding:10px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;flex-shrink:0}
 @media(max-width:700px){.sticky-banner{display:block}}
+
+.exit-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:center;justify-content:center;padding:20px}
+.exit-popup-overlay.active{display:flex}
+.exit-popup{background:white;border-radius:24px;padding:40px 36px;max-width:440px;width:100%;text-align:center;position:relative;animation:popIn .3s ease}
+@keyframes popIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.exit-popup-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:22px;color:#94a3b8;cursor:pointer;line-height:1}
+.exit-popup-icon{font-size:48px;margin-bottom:16px}
+.exit-popup-title{font-family:'Nunito Sans',sans-serif;font-size:26px;font-weight:900;color:#1e293b;margin-bottom:8px;line-height:1.2}
+.exit-popup-desc{font-size:15px;color:#64748b;line-height:1.6;margin-bottom:24px}
+.exit-popup-btn{display:block;background:linear-gradient(135deg,var(--gold),#f97316);color:#000;font-weight:800;font-size:17px;padding:16px;border-radius:14px;text-decoration:none;margin-bottom:10px;box-shadow:0 4px 16px rgba(245,158,11,.4)}
+.exit-popup-secondary{font-size:13px;color:#94a3b8;cursor:pointer;text-decoration:underline;background:none;border:none;font-family:inherit}
+.exit-popup-badge{display:inline-block;background:#f0fdf4;color:#16a34a;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:16px}
 </style>
 </head>
 <body>
+
+<div class="exit-popup-overlay" id="exitPopup">
+  <div class="exit-popup">
+    <button class="exit-popup-close" onclick="closePopup()">✕</button>
+    <div class="exit-popup-icon">🛡️</div>
+    <div class="exit-popup-badge">✓ Bloc A 100% gratis</div>
+    <div class="exit-popup-title">Espera! No marxis sense provar-ho</div>
+    <div class="exit-popup-desc">MossosPrep té <strong>950 preguntes del Bloc A completament gratis</strong>. Sense targeta. Sense registre. Comença ara mateix.</div>
+    <a href="https://mossosprep.cat/app.html" class="exit-popup-btn">🚀 Provar el Bloc A gratis</a>
+    <button class="exit-popup-secondary" onclick="closePopup()">No m'interessa</button>
+  </div>
+</div>
 <header class="site-header">
   <a href="https://mossosprep.cat" class="site-logo">Mossos<span>Prep</span></a>
   <nav class="site-nav">
@@ -191,5 +215,27 @@ footer a{color:var(--blue);text-decoration:none}
   <p><a href="https://mossosprep.cat/app.html">App</a> · <a href="https://mossosprep.cat/blog.html">Blog</a> · <a href="https://mossosprep.cat/sobre.html">Sobre</a> · <a href="https://mossosprep.cat/privacy.html">Privacitat</a></p>
   <p style="margin-top:8px">© 2026 MossosPrep — Preparació oficial per a les oposicions dels Mossos d'Esquadra</p>
 </footer>
+
+<script>
+let popupShown = false;
+let scrolled = false;
+window.addEventListener('scroll', () => { if (window.scrollY > 300) scrolled = true; });
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY < 10 && scrolled && !popupShown) {
+    popupShown = true;
+    document.getElementById('exitPopup').classList.add('active');
+  }
+});
+setTimeout(() => {
+  if (!popupShown && scrolled) {
+    popupShown = true;
+    document.getElementById('exitPopup').classList.add('active');
+  }
+}, 40000);
+function closePopup() { document.getElementById('exitPopup').classList.remove('active'); }
+document.getElementById('exitPopup').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('exitPopup')) closePopup();
+});
+</script>
 </body>
 </html>
