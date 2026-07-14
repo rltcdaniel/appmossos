@@ -1,6 +1,6 @@
 /* MossosPrep — Banner de consentiment de cookies
-   Afegeix a totes les pàgines HTML abans de </body>:
-   <script src="cookie-consent.js" defer></script>
+   Ja inclòs a totes les pàgines amb:
+   <script src="/cookie-consent.js" defer></script>
 */
 (function () {
   if (localStorage.getItem('mp_cookie_consent')) return;
@@ -26,7 +26,7 @@
   var banner = document.createElement('div');
   banner.id = 'mp-cookie-banner';
   banner.innerHTML =
-    '<p>Utilitzem cookies pròpies i de tercers (com Google) per millorar l\'experiència i, si acceptes, mostrar publicitat personalitzada. Pots consultar més informació a la nostra <a href="privacy.html">política de privacitat</a>.</p>' +
+    '<p>Utilitzem cookies pròpies i de tercers (com Google) per millorar l\'experiència i, si acceptes, mostrar publicitat personalitzada. Pots consultar més informació a la nostra <a href="/privacy.html">política de privacitat</a>.</p>' +
     '<div class="mp-btns">' +
       '<button id="mp-cookie-reject">Rebutjar</button>' +
       '<button id="mp-cookie-accept">Acceptar</button>' +
