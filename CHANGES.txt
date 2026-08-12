@@ -44,3 +44,21 @@ ADDED	temari-mossos-bloc-b.html
 ADDED	temari-mossos-bloc-c.html
 ADDED	temari-mossos-desquadra.html
 ADDED	test-mossos-desquadra.html
+
+=== 2026-08-12 · Millora pàgines Informació ===
+- Reescrites i redissenyades: sobre.html, contacte.html, privacy.html, avis-legal.html i cancel.html.
+- Afegit info-styles.css compartit i responsive.
+- Avís legal: titular Daniel Rodríguez Losada; NIF/DNI segons text indicat; domicili de contacte 08020, Barcelona.
+- Política de privacitat ampliada amb responsable, finalitats, bases, tercers, conservació, drets i transferències.
+- Cancel·lació: corregida la contradicció entre cancel·lació i final del període facturat.
+- Eliminades expressions de les pàgines d'Informació que podien suggerir afiliació oficial.
+- app.html i la seva lògica no s'han modificat.
+
+=== 2026-08-12 · Millora pàgines Informació ===
+- Reescrites i redissenyades: sobre.html, contacte.html, privacy.html, avis-legal.html i cancel.html.
+- Afegit info-styles.css compartit i responsive.
+- Avís legal: titular Daniel Rodríguez Losada; NIF/DNI segons text indicat; domicili de contacte 08020, Barcelona.
+- Política de privacitat ampliada amb responsable, finalitats, bases, tercers, conservació, drets i transferències.
+- Cancel·lació: corregida la contradicció entre cancel·lació i final del període facturat.
+- Eliminades expressions de les pàgines d'Informació que podien suggerir afiliació oficial.
+- app.html i la seva lògica no s'han modificat.
