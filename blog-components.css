@@ -12,3 +12,24 @@
 .mp-test-hook__btn{display:inline-flex!important;align-items:center;justify-content:center;background:#f59e0b!important;color:#111827!important;text-decoration:none!important;font-weight:900!important;padding:12px 18px!important;border-radius:11px!important;white-space:nowrap;box-shadow:0 4px 12px rgba(245,158,11,.22)}
 .mp-test-hook__note{font-size:11px;color:#64748b;margin-top:7px}
 @media(max-width:680px){.mp-test-hook{grid-template-columns:1fr}.mp-test-hook__btn{width:100%}}
+
+
+/* MossosPrep corporate palette — global article override */
+:root{--mp-blue:#003087;--mp-blue-dark:#001f5c;--mp-red:#E30613;--mp-gold:#f59e0b;--mp-gold-light:#fbbf24;--mp-slate:#64748b;--mp-line:#e2e8f0;--mp-light:#f8fafc}
+/* Keep every article visually aligned with the main MossosPrep page. */
+.site-header{background:#fff!important;border-bottom:1px solid var(--mp-line)!important;box-shadow:0 2px 12px rgba(15,23,42,.06)!important}
+.site-logo{color:var(--mp-blue)!important}
+.site-logo span{color:var(--mp-red)!important;opacity:1!important}
+.site-nav a:not(.nav-cta){color:var(--mp-slate)!important}
+.site-nav a:not(.nav-cta):hover{background:#f1f5f9!important;color:var(--mp-blue)!important}
+.site-nav .nav-cta{background:var(--mp-blue)!important;color:#fff!important;box-shadow:none!important}
+.site-nav .nav-cta:hover{background:#0047b3!important}
+.hero{background:linear-gradient(160deg,#001540 0%,var(--mp-blue) 55%,#1a0005 100%)!important}
+.hero h1 span{color:var(--mp-gold)!important}
+.tag{border-color:rgba(245,158,11,.35)!important;background:rgba(245,158,11,.14)!important;color:#fff!important}
+.article h2{color:var(--mp-blue)!important}
+.cta{background:linear-gradient(135deg,var(--mp-blue-dark),var(--mp-blue))!important}
+.cta a{background:var(--mp-gold)!important;color:#111827!important}
+.mp-test-hook{background:linear-gradient(135deg,#eff6ff,#fef2f2)!important;border-color:#bfdbfe!important;border-left-color:var(--mp-blue)!important}
+.mp-test-hook__eyebrow{color:var(--mp-red)!important}
+.mp-test-hook__btn{background:var(--mp-gold)!important;color:#111827!important}

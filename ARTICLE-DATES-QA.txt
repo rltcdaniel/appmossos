@@ -1,0 +1,19 @@
+MossosPrep — QA ordre cronològic d’articles
+
+Criteri: datePublished / article:published_time, descendent. En empats exactes es conserva l’ordre existent.
+
+Top 6 portada:
+1. blog-examens-anteriors-mossos.html — 2026-08-18T20:44:07.419+02:00
+2. blog-nota-tall-mossos.html — 2026-08-18T20:44:07.403+02:00
+3. blog-proves-fisiques-mossos.html — 2026-08-18T20:44:07.399+02:00
+4. blog-estatut-autonomia-mossos.html — 2026-07-14
+5. blog-unio-europea-mossos.html — 2026-07-14
+6. blog-codi-etic-policia-mossos.html — 2026-07-14
+
+3 articles nous (ordre més recent → menys recent):
+- blog-examens-anteriors-mossos.html — 2026-08-18T20:44:07.419+02:00
+- blog-nota-tall-mossos.html — 2026-08-18T20:44:07.403+02:00
+- blog-proves-fisiques-mossos.html — 2026-08-18T20:44:07.399+02:00
+
+Articles al blog: 22
+Resultat: OK

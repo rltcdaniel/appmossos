@@ -1,0 +1,8 @@
+MossosPrep corporate/home QA
+============================
+Home recent article cards: 6 (expected 6)
+Home cards correct/order: True
+Article pages using shared corporate CSS: 22
+SEO/support pages using corporate override: 18
+Internal missing references: 0
+app.html SHA-256: a07ecad96b6d2903c2f94dde2e8bc04441f72c7daa9b1dab69959319a916ca36
