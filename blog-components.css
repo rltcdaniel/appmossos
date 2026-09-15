@@ -24,8 +24,10 @@
 .site-nav a:not(.nav-cta):hover{background:#f1f5f9!important;color:var(--mp-blue)!important}
 .site-nav .nav-cta{background:var(--mp-blue)!important;color:#fff!important;box-shadow:none!important}
 .site-nav .nav-cta:hover{background:#0047b3!important}
-.hero{background:linear-gradient(160deg,#001540 0%,var(--mp-blue) 55%,#1a0005 100%)!important}
+.hero{background:linear-gradient(135deg,#001f5c,#003087)!important}
 .hero h1 span{color:var(--mp-gold)!important}
+.article-hero{background:linear-gradient(135deg,#001f5c,#003087)!important;padding:56px 24px 44px!important;color:white!important}
+.article-title span{color:var(--mp-gold)!important}
 .tag{border-color:rgba(245,158,11,.35)!important;background:rgba(245,158,11,.14)!important;color:#fff!important}
 .article h2{color:var(--mp-blue)!important}
 .cta{background:linear-gradient(135deg,var(--mp-blue-dark),var(--mp-blue))!important}
