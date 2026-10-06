@@ -1,4 +1,4 @@
-const CACHE = 'mossosprep-v2';
+const CACHE = 'mossosprep-v3';
 const ASSETS = ['./index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', e => {
@@ -20,20 +20,24 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  // Only cache GET requests for our own assets
+  // Only cache GET requests
   if (e.request.method !== 'GET') return;
-  
+
   const url = new URL(e.request.url);
-  
-  // For index.html: always try network first, fall back to cache
-  // This ensures users always get the latest version
-  if (url.pathname === '/' || url.pathname === '/index.html') {
+  const isPage = e.request.mode === 'navigate' ||
+                 url.pathname === '/' ||
+                 url.pathname.endsWith('.html');
+
+  // Pages (index.html, app.html, blog...): network first, fall back to cache
+  // so users always get the latest questions and counters when online
+  if (isPage) {
     e.respondWith(
       fetch(e.request)
         .then(res => {
-          // Update cache with fresh version
-          const resClone = res.clone();
-          caches.open(CACHE).then(c => c.put(e.request, resClone));
+          if (res.ok) {
+            const copy = res.clone();
+            caches.open(CACHE).then(c => c.put(e.request, copy));
+          }
           return res;
         })
         .catch(() => caches.match(e.request))
@@ -41,13 +45,14 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // For other assets (fonts, icons): cache first
+  // Other assets (fonts, icons, css, js): cache first
   e.respondWith(
     caches.match(e.request)
       .then(cached => cached || fetch(e.request)
         .then(res => {
           if (res.ok) {
-            caches.open(CACHE).then(c => c.put(e.request, res.clone()));
+            const copy = res.clone();
+            caches.open(CACHE).then(c => c.put(e.request, copy));
           }
           return res;
         })
