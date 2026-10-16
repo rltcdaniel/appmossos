@@ -494,3 +494,10 @@ details.question .answer{padding:0 0 16px;color:var(--ink-2)}
 .key-guides p{margin:0 8px 0 0;font-weight:720;color:var(--navy-800);font-size:15px}
 .key-guides a{font-size:15px;font-weight:600;padding:7px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);text-decoration:none}
 .key-guides a:hover{border-color:var(--navy-600);background:var(--blue-50)}
+
+/* Portal de clients (pàgina de cancel·lació) */
+.portal-box{background:var(--blue-50);border:1px solid var(--blue-100);border-top:4px solid var(--navy-700);border-radius:var(--radius);padding:22px 24px}
+.portal-box h3{font-size:21px;margin:0 0 6px}
+.portal-box p{font-size:16.5px;color:var(--ink-2)}
+.portal-box .checklist{margin:.8em 0 1.2em;font-size:16.5px}
+.portal-box .checklist li{margin:.35em 0}
