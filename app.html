@@ -789,7 +789,16 @@ if ('serviceWorker' in navigator) {
   <div class="splash-tagline">La preparació definitiva per aprovar les oposicions dels Mossos d'Esquadra de Catalunya.</div>
   <button class="splash-btn" onclick="closeSplash()">Començar ara</button>
   <div class="splash-sub">+4.700 preguntes oficials · Blocs A, B i C</div>
-  <button onclick="closeSplash();setTimeout(()=>showPage('subscriber'),300)" style="margin-top:16px;background:none;border:none;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-decoration:underline">
+  <script>
+    // Si es prem el botó abans que l'app (2,9 MB) acabi de carregar, tanquem la benvinguda igualment
+    // i recordem on volia anar; la funció completa ho reprèn quan carrega.
+    function closeSplash(target) {
+      var el = document.getElementById('splash'); if (el) el.classList.add('hidden');
+      try { localStorage.setItem('mossos_splash_seen', 'true'); } catch (e) {}
+      window.__splashPending = target || 'home';
+    }
+  </script>
+  <button onclick="closeSplash('subscriber')" style="margin-top:16px;background:none;border:none;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-decoration:underline">
     Ja ets subscriptor? Activa el teu accés
   </button>
 </div>
@@ -1364,9 +1373,10 @@ function showPremiumWall() {
   window.scrollTo(0, 0);
 }
 
-function closeSplash() {
+function closeSplash(target) {
   document.getElementById('splash').classList.add('hidden');
   try { localStorage.setItem('mossos_splash_seen', 'true'); } catch {}
+  if (target === 'subscriber') { setTimeout(() => showPage('subscriber'), 300); return; }
   // Always show onboarding unless user marked "no tornar a mostrar"
   try {
     if (localStorage.getItem('mossos_onboarding_done')) return;
@@ -7736,6 +7746,7 @@ function stopSimTimer() {
 // ─── INIT ────────────────────────────────────────────────────────────────────
 
 renderHome();
+if (window.__splashPending) { const t = window.__splashPending; window.__splashPending = null; closeSplash(t === 'subscriber' ? 'subscriber' : undefined); }
 </script>
 </body>
 </html>
