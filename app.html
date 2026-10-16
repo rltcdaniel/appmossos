@@ -1412,16 +1412,85 @@ function injectAd(containerId, slotId, format) {
   if (s) { const ns = document.createElement('script'); ns.text = s.text; s.parentNode.replaceChild(ns, s); }
 }
 
-// ─── AUTO-ACTIVATE PREMIUM ON STRIPE RETURN ──────────────────────────────────
+// ─── PREMIUM: VERIFICACIÓ CONTRA STRIPE (Cloudflare Worker) ─────────────────
+const PREMIUM_API = 'https://mossosprep-worker.rltc-daniel.workers.dev';
+const PREMIUM_RECHECK_MS = 3 * 24 * 3600 * 1000; // revisa la subscripció cada 3 dies
+
+async function premiumApi(path, payload) {
+  const r = await fetch(PREMIUM_API + path, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(data.error || ('http_' + r.status));
+  return data;
+}
+
+function grantPremium(email, until) {
+  try {
+    localStorage.setItem('mossos_premium', 'true');
+    if (email) localStorage.setItem('mossos_premium_email', email);
+    if (until) localStorage.setItem('mossos_premium_until', String(until));
+    localStorage.setItem('mossos_premium_checked', String(Date.now()));
+  } catch {}
+}
+
+function revokePremium() {
+  try {
+    ['mossos_premium', 'mossos_premium_email', 'mossos_premium_until', 'mossos_premium_checked']
+      .forEach(k => localStorage.removeItem(k));
+  } catch {}
+}
+
+// Tornada del pagament: Stripe redirigeix amb ?session_id=cs_...
+async function verifyCheckoutSession(sessionId) {
+  try {
+    const res = await premiumApi('/session', { session_id: sessionId });
+    try { localStorage.removeItem('mossos_pending_session'); } catch {}
+    if (res.premium) {
+      grantPremium(res.email, res.until);
+      if (typeof showToast === 'function') showToast('✓ Premium activat. Bon estudi!');
+      if (typeof renderHome === 'function') renderHome();
+    }
+  } catch {
+    // Sense connexió o Stripe no disponible: ho reintentem a la propera càrrega
+    try { localStorage.setItem('mossos_pending_session', sessionId); } catch {}
+  }
+}
+
+// Revisió periòdica: si la subscripció ja no és activa, es retira el Premium.
+async function recheckPremium() {
+  let email, checked;
+  try {
+    if (localStorage.getItem('mossos_premium') !== 'true') return;
+    email = localStorage.getItem('mossos_premium_email');
+    checked = +localStorage.getItem('mossos_premium_checked') || 0;
+  } catch { return; }
+  if (!email || Date.now() - checked < PREMIUM_RECHECK_MS) return;
+  try {
+    const res = await premiumApi('/verify', { email });
+    if (res.premium) {
+      grantPremium(email, res.until);
+    } else {
+      revokePremium();
+      if (typeof showToast === 'function') showToast('La teva subscripció Premium ja no està activa');
+      if (typeof renderHome === 'function') renderHome();
+    }
+  } catch {
+    // Error de xarxa o del servei: no traiem l'accés per un error temporal
+  }
+}
+
 (function() {
   const params = new URLSearchParams(window.location.search);
-  if (params.get('key') === 'XvTUI3GcaqxV3WYO2nPlyeYgHZuPhPpOdrDyiWB9F60') {
-    try {
-      localStorage.setItem('mossos_premium', 'true');
-    } catch {}
-    // Clean URL without reloading
-    window.history.replaceState({}, '', window.location.pathname);
-  }
+  let sid = params.get('session_id');
+  if (sid || params.get('key')) window.history.replaceState({}, '', window.location.pathname);
+  if (!sid) { try { sid = localStorage.getItem('mossos_pending_session'); } catch {} }
+  window.addEventListener('load', () => {
+    if (sid) verifyCheckoutSession(sid);
+    else recheckPremium();
+  });
 })();
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -7329,21 +7398,31 @@ function showToast(msg) {
   setTimeout(() => { t.style.opacity = '0'; }, 2500);
 }
 
-function activateSubscriber() {
+async function activateSubscriber() {
   const email = document.getElementById('subscriber-email').value.trim();
   const msg   = document.getElementById('subscriber-msg');
-  if (!email || !email.includes('@')) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     msg.textContent = 'Introdueix un correu vàlid.';
     msg.style.color = '#dc2626';
     return;
   }
+  msg.textContent = 'Comprovant la subscripció…';
+  msg.style.color = '#64748b';
   try {
-    localStorage.setItem('mossos_premium', 'true');
-    localStorage.setItem('mossos_premium_email', email);
-  } catch {}
-  msg.textContent = '✓ Accés premium activat!';
-  msg.style.color = '#16a34a';
-  setTimeout(() => showPage('home'), 1200);
+    const res = await premiumApi('/verify', { email });
+    if (res.premium) {
+      grantPremium(email, res.until);
+      msg.textContent = '✓ Accés premium activat!';
+      msg.style.color = '#16a34a';
+      setTimeout(() => showPage('home'), 1200);
+    } else {
+      msg.textContent = "No trobem cap subscripció activa amb aquest correu. Fes servir el mateix correu amb què vas pagar a Stripe.";
+      msg.style.color = '#dc2626';
+    }
+  } catch {
+    msg.textContent = "No s'ha pogut comprovar ara mateix. Torna-ho a provar en uns minuts.";
+    msg.style.color = '#dc2626';
+  }
 }
 
 
