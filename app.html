@@ -767,8 +767,8 @@ if ('serviceWorker' in navigator) {
       <div class="onboarding-dot" id="ob-dot-2"></div>
     </div>
     <div class="onboarding-icon" id="ob-icon">🎁</div>
-    <div class="onboarding-title" id="ob-title">Bloc A completament gratis</div>
-    <div class="onboarding-desc" id="ob-desc">Comença a practicar ara sense pagar res. El Bloc A complet amb 1.450 preguntes és gratuït per sempre.</div>
+    <div class="onboarding-title" id="ob-title">Temes A.1 i A.2 gratis</div>
+    <div class="onboarding-desc" id="ob-desc">Comença a practicar ara sense pagar res. Els temes A.1 i A.2 (Història de Catalunya), amb 400 preguntes, són gratuïts.</div>
     <button class="onboarding-btn" id="ob-btn" onclick="onboardingNext()">Següent</button>
     <label style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;cursor:pointer;font-size:13px;color:var(--slate-400)">
       <input type="checkbox" id="ob-noshow" style="width:15px;height:15px;cursor:pointer">
@@ -946,6 +946,7 @@ if ('serviceWorker' in navigator) {
       <div class="premium-lock-title">Desbloqueja el Premium</div>
       <div class="premium-lock-desc">Accedeix a tot el temari complet per preparar les oposicions dels Mossos d'Esquadra.</div>
       <ul class="premium-features">
+        <li>Bloc A complet — els 7 temes (1.450 preguntes)</li>
         <li>Bloc B — Àmbit institucional (1.700 preguntes)</li>
         <li>Bloc C — Àmbit policial (800 preguntes)</li>
         <li>14 exàmens reals de convocatòries oficials</li>
@@ -955,9 +956,9 @@ if ('serviceWorker' in navigator) {
         <li>Sense anuncis des del primer pagament</li>
         <li>1 dia de prova gratuïta</li>
       </ul>
-      <div class="premium-lock-price">4,99 €</div>
+      <div class="premium-lock-price">9,99 €</div>
       <div class="premium-lock-price-sub">al mes · sense anuncis · cancel·la quan vulguis</div>
-      <a class="btn-premium" href="https://buy.stripe.com/8x2eVc0VceJL95kdoQawo01" target="_blank" id="btn-stripe">
+      <a class="btn-premium" href="https://buy.stripe.com/28E9ASbzQ8lngxM0C4awo03" target="_blank" id="btn-stripe">
         <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         Prova 1 dia gratis
       </a>
@@ -1234,9 +1235,9 @@ if ('serviceWorker' in navigator) {
 // ─── ONBOARDING ──────────────────────────────────────────────────────────────
 
 const ONBOARDING_STEPS = [
-  { icon: '🎁', title: 'Bloc A completament gratis', desc: 'Comença a practicar ara sense pagar res. El Bloc A complet amb 1.450 preguntes és gratuït per sempre.' },
+  { icon: '🎁', title: 'Temes A.1 i A.2 gratis', desc: 'Comença a practicar ara sense pagar res. Els temes A.1 i A.2 (Història de Catalunya), amb 400 preguntes, són gratuïts.' },
   { icon: '🎯', title: 'Tres modes d\'estudi', desc: 'Mode Examen per simular la prova real, Mode Estudi per aprendre amb explicacions, i Simulacre cronometrat de 35 minuts.' },
-  { icon: '🚀', title: 'Desbloqueja el Premium', desc: 'Accedeix als Blocs B i C, tots els exàmens reals i les estadístiques per 4,99€/mes. 1 dia de prova gratuïta.' },
+  { icon: '🚀', title: 'Desbloqueja el Premium', desc: 'Accedeix a la resta del Bloc A, els Blocs B i C, tots els exàmens reals i les estadístiques per 9,99€/mes. 1 dia de prova gratuïta.' },
 ];
 let _obStep = 0;
 
@@ -1338,12 +1339,11 @@ function updateDarkIcon(isDark) {
 
 // ─── PREMIUM / FREEMIUM ──────────────────────────────────────────────────────
 
-const STRIPE_URL = 'https://buy.stripe.com/8x2eVc0VceJL95kdoQawo01';
+const STRIPE_URL = 'https://buy.stripe.com/28E9ASbzQ8lngxM0C4awo03';
 
-// FREE themes: Bloc A + 3 most recent real exams
+// FREE themes: només A.1 i A.2 (des d'octubre de 2026). Tota la resta és Premium.
 const FREE_THEME_IDS = new Set([
-  'A1','A2','A3','A4','A5','A6','A7',
-  'X2024M1'
+  'A1','A2'
 ]);
 
 function isPremium() {
@@ -1352,12 +1352,8 @@ function isPremium() {
 
 function isFreeTheme(themeId) {
   if (isPremium()) return true;
-  // Only ABLOC (Bloc A complete exam) is free
-  if (themeId === 'ABLOC') return true;
-  // BBLOC, CBLOC and SIM1 are premium
-  if (themeId === 'BBLOC' || themeId === 'CBLOC' || themeId === 'SIM1') return false;
-  // Real exams: only 3 are free
-  if (themeId.startsWith('X') && !FREE_THEME_IDS.has(themeId)) return false;
+  // Exàmens complets de bloc i simulacres: Premium
+  if (themeId === 'ABLOC' || themeId === 'BBLOC' || themeId === 'CBLOC' || themeId === 'SIM1') return false;
   return FREE_THEME_IDS.has(themeId);
 }
 
@@ -7353,6 +7349,9 @@ function activateSubscriber() {
 
 function renderHomeLockBadge(bloc) {
   if (isPremium()) return '';
+  if (bloc === 'Bloc A') {
+    return '<div class="hbc-lock-badge">A.1 i A.2 gratis</div>';
+  }
   const lockedBlocs = ['Bloc B', 'Bloc C', 'Simulacres', 'Exàmens Reals', 'Actualitat'];
   if (lockedBlocs.includes(bloc)) {
     return '<div class="hbc-lock-badge"><svg width="10" height="10" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg> Premium</div>';
