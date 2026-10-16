@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ca">
 <head>
 <script type="application/ld+json">
@@ -69,426 +68,76 @@
   gtag('js', new Date());
   gtag('config', 'AW-18212325013');
 </script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900&amp;family=Nunito+Sans:wght@800;900&amp;display=swap" rel="stylesheet"/>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --blue:#003087;--blue-dark:#001f5c;--red:#E30613;
-  --gold:#f59e0b;--gold-light:#fbbf24;
-  --slate:#475569;--light:#f8fafc;
-}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:white;color:#1e293b;overflow-x:hidden}
-
-/* NAV */
-nav{background:white;border-bottom:1px solid #e2e8f0;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-logo{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:900;color:var(--blue);text-decoration:none}
-.nav-logo span{color:var(--red)}
-.nav-links{display:flex;align-items:center;gap:4px}
-.nav-link{color:#64748b;text-decoration:none;font-size:14px;font-weight:600;padding:8px 14px;border-radius:8px;transition:all .2s}
-.nav-link:hover{color:var(--blue);background:#f1f5f9}
-.nav-cta{background:var(--blue);color:white;font-weight:800;font-size:14px;padding:10px 20px;border-radius:10px;text-decoration:none;transition:all .15s;margin-left:8px}
-.nav-cta:hover{background:#0047b3}
-
-/* HERO */
-.hero{background:linear-gradient(160deg,#001540 0%,#003087 55%,#1a0005 100%);padding:40px 32px 36px;color:white}
-.hero-inner{max-width:1100px;margin:0 auto;text-align:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.3);border-radius:999px;padding:5px 14px;font-size:11px;font-weight:700;color:var(--gold-light);margin-bottom:12px}
-.hero-title{font-family:'Nunito Sans',sans-serif;font-size:clamp(32px,4.2vw,60px);font-weight:900;line-height:1.1;margin-bottom:12px}
-.hero-title span{color:var(--gold)}
-.hero-sub{font-size:18px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:20px;max-width:1100px;margin-left:auto;margin-right:auto}
-.hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),#f97316);color:#000;font-weight:800;font-size:14px;padding:12px 24px;border-radius:12px;text-decoration:none;box-shadow:0 4px 16px rgba(245,158,11,.35);transition:all .2s}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(245,158,11,.55)}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:white;font-weight:700;font-size:14px;padding:12px 20px;border-radius:12px;text-decoration:none;border:1px solid rgba(255,255,255,.2);transition:all .2s}
-.btn-secondary:hover{background:rgba(255,255,255,.18)}
-.hero-note{font-size:13px;color:rgba(255,255,255,.4)}
-
-
-/* STATS BAR */
-.stats-bar{background:#f8fafc;border-bottom:1px solid #e2e8f0;padding:0 32px}
-.stats-bar-inner{max-width:1100px;margin:0 auto;display:flex}
-.stat-item{flex:1;padding:24px 20px;text-align:center;border-right:1px solid #e2e8f0}
-.stat-item:last-child{border-right:none}
-.stat-num{font-family:'Nunito Sans',sans-serif;font-size:32px;font-weight:900;color:var(--blue)}
-.stat-label{font-size:13px;color:#64748b;font-weight:600;margin-top:2px}
-
-/* SECTIONS */
-.section{padding:80px 32px}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-tag{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:12px}
-.section-title{font-family:'Nunito Sans',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:900;color:#0f172a;margin-bottom:12px;line-height:1.1}
-.section-desc{font-size:17px;color:#64748b;max-width:540px;line-height:1.65;margin-bottom:48px}
-
-/* FAQ */
-.faq-list{max-width:760px}
-.faq-item{border-bottom:1px solid #e2e8f0;padding:22px 0}
-.faq-item:first-child{border-top:1px solid #e2e8f0}
-.faq-q{font-family:'Nunito Sans',sans-serif;font-size:17px;font-weight:800;color:#0f172a;margin-bottom:8px}
-.faq-a{font-size:15px;color:#475569;line-height:1.65;max-width:640px}
-
-/* MID CTA */
-.mid-cta{background:var(--blue);padding:28px 32px;text-align:center}
-.mid-cta-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-.mid-cta-text{color:white;font-size:16px;font-weight:700}
-.mid-cta-text span{color:var(--gold-light)}
-
-/* BLOG PREVIEW */
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.blog-card{background:white;border-radius:16px;border:1px solid #e2e8f0;overflow:hidden;text-decoration:none;color:inherit;transition:all .2s;display:flex;flex-direction:column}
-.blog-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-4px);border-color:#93c5fd}
-.blog-card-color{height:4px}
-.blog-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
-.blog-card-tag{display:inline-flex;align-items:center;gap:5px;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:700;margin-bottom:12px;width:fit-content}
-.blog-card-title{font-size:17px;font-weight:800;color:#0f172a;margin-bottom:8px;line-height:1.3;flex:1}
-.blog-card-desc{font-size:14px;color:#64748b;line-height:1.6;margin-bottom:16px}
-.blog-card-meta{font-size:12px;color:#94a3b8;font-weight:600;display:flex;align-items:center;justify-content:space-between}
-.blog-card-cta{color:var(--blue);font-weight:700;font-size:13px}
-.view-all{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-weight:700;font-size:15px;text-decoration:none;margin-top:32px;padding:12px 24px;border:2px solid #e2e8f0;border-radius:10px;transition:all .2s}
-.view-all:hover{border-color:var(--blue);background:#eff6ff}
-
-/* FEATURES */
-.section.bg-light{background:#f8fafc}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.feat{background:white;border-radius:16px;padding:28px;border:1px solid #e2e8f0}
-.feat-icon{font-size:32px;margin-bottom:14px}
-.feat-title{font-size:17px;font-weight:700;color:#0f172a;margin-bottom:8px}
-.feat-desc{font-size:14px;color:#64748b;line-height:1.65}
-
-/* BLOCS */
-.blocs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.bloc{border-radius:16px;padding:28px;color:white}
-.bloc-a{background:linear-gradient(135deg,#003087,#0047b3)}
-.bloc-b{background:linear-gradient(135deg,#991b1b,#dc2626)}
-.bloc-c{background:linear-gradient(135deg,#a16207,#ca8a04)}
-.bloc-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;opacity:.65;margin-bottom:8px}
-.bloc-name{font-family:'Nunito Sans',sans-serif;font-size:22px;font-weight:900;margin-bottom:4px}
-.bloc-info{font-size:13px;opacity:.65;margin-bottom:14px}
-.bloc-topics{display:flex;flex-direction:column;gap:5px}
-.bloc-topic{font-size:12px;opacity:.7;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border-radius:6px;padding:5px 10px}
-.bloc-topic::before{content:"›";color:var(--gold);font-weight:800;flex-shrink:0}
-
-/* PRICING */
-.pricing-card{background:white;border:2px solid #e2e8f0;border-radius:24px;padding:48px;max-width:480px;margin:0 auto;text-align:center;position:relative}
-.pricing-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),#f97316);color:#000;font-weight:800;font-size:11px;padding:4px 14px;border-radius:999px;margin-bottom:20px;text-transform:uppercase}
-.pricing-amount{font-family:'Nunito Sans',sans-serif;font-size:72px;font-weight:900;color:var(--blue);line-height:1}
-.pricing-period{font-size:16px;color:#64748b;margin-bottom:6px}
-.pricing-trial{font-size:15px;color:#0f172a;font-weight:600;margin-bottom:28px}
-.pricing-trial span{color:var(--gold);font-weight:800}
-.pricing-feats{list-style:none;text-align:left;margin-bottom:32px}
-.pricing-feat{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:15px;color:#334155}
-.pricing-feat:last-child{border:none}
-.pricing-feat::before{content:"✓";background:var(--blue);color:white;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex-shrink:0}
-
-/* FOOTER */
-footer{background:#0f172a;color:rgba(255,255,255,.7);padding:60px 32px 32px}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
-.footer-brand-logo{font-family:'Nunito Sans',sans-serif;font-size:24px;font-weight:900;color:white;margin-bottom:12px}
-.footer-brand-logo span{color:var(--red)}
-.footer-brand-desc{font-size:14px;line-height:1.7;color:rgba(255,255,255,.5);margin-bottom:16px}
-.footer-contact{font-size:13px;color:rgba(255,255,255,.4)}
-.footer-contact a{color:rgba(255,255,255,.5);text-decoration:none}
-.footer-contact a:hover{color:var(--gold)}
-.footer-heading{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:16px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:14px;transition:color .15s}
-.footer-links a:hover{color:white}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.3)}
-.footer-bottom a{color:rgba(255,255,255,.3);text-decoration:none}
-.footer-bottom a:hover{color:rgba(255,255,255,.6)}
-
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .features-grid,.blocs-grid{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-  nav{padding:0 20px}
-  .section{padding:60px 20px}
-  .stats-bar{padding:0 20px}
-  .features-grid,.blocs-grid,.blog-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .nav-links .nav-link{display:none}
-}
-</style>
+<meta content="#0A2557" name="theme-color"/>
+<link as="font" crossorigin="" href="/fonts/archivo-latin.woff2" rel="preload" type="font/woff2"/>
+<link href="/site.css?v=1" rel="stylesheet"/>
 </head>
 <body>
-<!-- NAV -->
-<nav>
-<a class="nav-logo" href="https://mossosprep.cat">Mossos<span>Prep</span></a>
-<div class="nav-links">
-<a class="nav-link" href="/test-mossos-desquadra.html">Tests</a>
-<a class="nav-link" href="/temari-mossos-desquadra.html">Temari</a>
-<a class="nav-link" href="#blog">Blog</a>
-<a class="nav-link" href="#preu">Preu</a>
-<a class="nav-link" href="https://mossosprep.cat/sobre.html">Sobre nosaltres</a>
-<a class="nav-cta" href="https://mossosprep.cat/app.html">🛡️ Accedir a l'app</a>
+<a class="skip" href="#contingut">Saltar al contingut</a><header class="site-header"><div class="bar"><a class="brand" href="/">Mossos<span>Prep</span></a><nav class="site-nav" aria-label="Navegació principal"><a href="/test-mossos-desquadra.html">Tests</a><a href="/temari-mossos-desquadra.html">Temari</a><a href="/psicotecnics-mossos.html">Psicotècnics</a><a href="/oposicions-mossos-desquadra.html">Oposició</a><a href="/blog.html">Blog</a></nav><a class="header-cta" href="/app.html">Entrar a l'app</a></div></header>
+<main id="contingut">
+<section class="home-hero"><div class="wrap home-hero-grid">
+<div class="home-hero-text">
+<h1>Prepara't. El teu futur comença aquí.</h1>
+<p class="page-dek">La preparació definitiva per aprovar les oposicions dels Mossos d'Esquadra. Temari oficial, exàmens reals i simulacres cronometrats.</p>
+<div class="actions"><a class="btn" href="/app.html">Accedir a l'app — Bloc A gratis</a><a class="btn secondary" href="#temari">Veure el temari</a></div>
+<p class="home-note">Després, 4,99 €/mes amb 1 dia de prova gratuïta. Cancel·la quan vulguis.</p>
 </div>
-</nav>
-<!-- HERO -->
-<section class="hero">
-<div class="hero-inner">
-<div>
-<div class="hero-badge">🛡️ Preparació oficial Mossos d'Esquadra</div>
-<h1 class="hero-title">Prepara't.<br/><span>El teu futur comença aquí.</span></h1>
-<p class="hero-sub">La preparació definitiva per aprovar les oposicions dels Mossos d'Esquadra. Temari oficial, exàmens reals i simulacres cronometrats.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="https://mossosprep.cat/app.html">🛡️ Accedir a l'app — Bloc A gratis</a>
-<a class="btn-secondary" href="#temari">Veure el temari</a>
+<div class="demo-q" data-correct="2">
+<p class="demo-label">Prova una pregunta del Bloc A</p>
+<p class="demo-text">La Guerra de Successió va finalitzar a Catalunya amb la caiguda de Barcelona l'any…</p>
+<div class="demo-opts" role="group" aria-label="Respostes">
+<button type="button" class="demo-opt"><span>A</span>1701</button>
+<button type="button" class="demo-opt"><span>B</span>1707</button>
+<button type="button" class="demo-opt"><span>C</span>1714</button>
+<button type="button" class="demo-opt"><span>D</span>1716</button>
 </div>
-<p class="hero-note">Després <strong style="color:rgba(255,255,255,.6)">4,99€/mes</strong> · 1 dia de prova gratuïta · Cancel·la quan vulguis</p>
+<p class="demo-exp" hidden>Barcelona va caure l'11 de setembre de 1714, data que commemorem com a Diada Nacional de Catalunya. <a href="/app.html">Fes-ne 1.449 més al Bloc A</a></p>
 </div>
 </div>
-</section>
-<!-- STATS -->
-<div class="stats-bar">
-<div class="stats-bar-inner">
-<div class="stat-item"><div class="stat-num">4.790+</div><div class="stat-label">Preguntes oficials</div></div>
-<div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Blocs temàtics</div></div>
-<div class="stat-item"><div class="stat-num">14</div><div class="stat-label">Exàmens reals</div></div>
-<div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Temari oficial</div></div>
-</div>
-</div>
-<!-- URGENCY BANNER -->
-<div style="background:#fef2f2;border-top:3px solid #E30613;border-bottom:3px solid #E30613;padding:16px 32px;text-align:center">
-<div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
-<span style="font-size:14px;font-weight:700;color:#991b1b">📅 Convocatòria 46/26 en curs:</span>
-<span style="font-size:14px;color:#7f1d1d">1.587 places · 1a prova prevista el <strong>17 d’octubre de 2026</strong></span>
-<a href="/blog-oposicions-mossos-2026.html" style="background:#E30613;color:white;font-weight:800;font-size:13px;padding:6px 14px;border-radius:8px;text-decoration:none">Més informació →</a>
-</div>
-</div>
-<!-- BLOG -->
-<section class="section" id="blog">
-<div class="section-inner">
-<div class="section-tag">Blog i recursos gratuïts</div>
-<h2 class="section-title">Tot el que necessites saber sobre les oposicions dels Mossos d'Esquadra</h2>
-<p class="section-desc">Els 6 articles més recents: guies, informació oficial i recursos pensats per resoldre dubtes i posar a prova el que has après amb MossosPrep.</p>
-<!-- Six latest articles by publication/upload date, newest first. --><div class="blog-grid"><a class="blog-card" data-published-at="2026-08-18T20:44:07.419+02:00" href="https://mossosprep.cat/blog-examens-anteriors-mossos.html">
-<div class="blog-card-color" style="background:#f59e0b"></div>
-<div class="blog-card-body">
-<div class="blog-card-tag">📄 Exàmens oficials</div>
-<div class="blog-card-title">Exàmens Anteriors dels Mossos: Models Oficials i Respostes</div>
-<div class="blog-card-desc">On trobar models oficials i plantilles de resposta i com convertir-los en simulacres útils per al teu estudi.</div>
-<div class="blog-card-meta"><span>18 ag. 2026 · 4 min</span><span class="blog-card-cta">Llegir →</span></div>
-</div></a><a class="blog-card" data-published-at="2026-08-18T20:44:07.403+02:00" href="https://mossosprep.cat/blog-nota-tall-mossos.html">
-<div class="blog-card-color" style="background:#E30613"></div>
-<div class="blog-card-body">
-<div class="blog-card-tag">📊 Notes i resultats</div>
-<div class="blog-card-title">Nota de Tall Mossos 2026: Quina És i Com Funciona</div>
-<div class="blog-card-desc">Diferència entre nota mínima i nota de tall, estat de la 46/26 i com interpretar els resultats sense perdre el focus.</div>
-<div class="blog-card-meta"><span>18 ag. 2026 · 5 min</span><span class="blog-card-cta">Llegir →</span></div>
-</div></a><a class="blog-card" data-published-at="2026-08-18T20:44:07.399+02:00" href="https://mossosprep.cat/blog-proves-fisiques-mossos.html">
-<div class="blog-card-color" style="background:#003087"></div>
-<div class="blog-card-body">
-<div class="blog-card-tag">💪 Proves físiques</div>
-<div class="blog-card-title">Proves Físiques Mossos 2026: Barems Oficials i Com Preparar-les</div>
-<div class="blog-card-desc">Barems oficials de circuit, pressió sobre banc i course navette, nota mínima i estratègia de preparació.</div>
-<div class="blog-card-meta"><span>18 ag. 2026 · 5 min</span><span class="blog-card-cta">Llegir →</span></div>
-</div></a><a class="blog-card" data-published-at="2026-07-14" href="https://mossosprep.cat/blog-estatut-autonomia-mossos.html">
-<div class="blog-card-color" style="background:#E30613"></div>
-<div class="blog-card-body">
-<div class="blog-card-tag">📘 Temari · Bloc B</div>
-<div class="blog-card-title">L'Estatut d'Autonomia de Catalunya: Guia per al Bloc B</div>
-<div class="blog-card-desc">Estructura, aprovació i competències clau de l'Estatut de 2006 per estudiar els conceptes que poden aparèixer a l'examen.</div>
-<div class="blog-card-meta"><span>14 jul. 2026 · 3 min</span><span class="blog-card-cta">Llegir →</span></div>
-</div></a><a class="blog-card" data-published-at="2026-07-14" href="https://mossosprep.cat/blog-unio-europea-mossos.html">
-<div class="blog-card-color" style="background:#003087"></div>
-<div class="blog-card-body">
-<div class="blog-card-tag">📘 Temari · Bloc B</div>
-<div class="blog-card-title">La Unió Europea: Institucions Bàsiques per al Bloc B</div>
-<div class="blog-card-desc">Parlament Europeu, Consell, Comissió i Consell Europeu explicats amb enfocament directe a les preguntes del test.</div>
-<div class="blog-card-meta"><span>14 jul. 2026 · 3 min</span><span class="blog-card-cta">Llegir →</span></div>
-</div></a><a class="blog-card" data-published-at="2026-07-14" href="https://mossosprep.cat/blog-codi-etic-policia-mossos.html">
-<div class="blog-card-color" style="background:#f59e0b"></div>
-<div class="blog-card-body">
-<div class="blog-card-tag">📙 Temari · Bloc C</div>
-<div class="blog-card-title">El Codi d'Ètica de la Policia de Catalunya: Guia per al Bloc C</div>
-<div class="blog-card-desc">Principis, estructura i punts essencials del Codi d'Ètica amb orientació pràctica per preparar preguntes tipus test.</div>
-<div class="blog-card-meta"><span>14 jul. 2026 · 3 min</span><span class="blog-card-cta">Llegir →</span></div>
-</div></a></div>
-<a class="view-all" href="https://mossosprep.cat/blog.html">Veure tots els articles →</a>
-</div>
-</section>
-<!-- FEATURES -->
-<section class="section bg-light">
-<div class="section-inner">
-<div class="section-tag">Per què MossosPrep?</div>
-<h2 class="section-title">Tot el que necessites per aprovar</h2>
-<p class="section-desc">Dissenyat específicament per a les oposicions dels Mossos d'Esquadra, amb el temari oficial i les eines d'estudi més efectives.</p>
-<div class="features-grid">
-<div class="feat"><div class="feat-icon">🎯</div><div class="feat-title">Tests oficials</div><div class="feat-desc">+4.700 preguntes extretes del temari oficial dels Blocs A, B i C, actualitzades i revisades.</div></div>
-<div class="feat"><div class="feat-icon">⏱️</div><div class="feat-title">Simulacre cronometrat</div><div class="feat-desc">30 preguntes en 35 minuts amb les mateixes condicions que l'examen real. Puntuació 0-10, mínim 4.</div></div>
-<div class="feat"><div class="feat-icon">📊</div><div class="feat-title">Estadístiques i evolució</div><div class="feat-desc">Segueix el teu progrés per tema amb nota mitjana i gràfic d'evolució dels últims tests.</div></div>
-<div class="feat"><div class="feat-icon">⚡</div><div class="feat-title">Preguntes febles</div><div class="feat-desc">L'app detecta on falles més i crea un test personalitzat automàticament per reforçar-ho.</div></div>
-<div class="feat"><div class="feat-icon">📖</div><div class="feat-title">14 exàmens reals</div><div class="feat-desc">Exàmens de les convocatòries 2019, 2021, 2022, 2023 i 2024. El millor material de preparació disponible.</div></div>
-<div class="feat"><div class="feat-icon">📵</div><div class="feat-title">Funciona offline</div><div class="feat-desc">Un cop carregada, l'app funciona sense connexió. Estudia al metro, al bus o on sigui.</div></div>
-</div>
-</div>
-</section>
-<!-- MID CTA -->
-<div class="mid-cta">
-<div class="mid-cta-inner">
-<span class="mid-cta-text">📚 El Bloc A complet (<span>1.450 preguntes</span>) és gratis per sempre</span>
-<a class="btn-primary" href="https://mossosprep.cat/app.html">Comença ara →</a>
-</div>
-</div>
-<!-- BLOCS -->
-<section class="section" id="temari">
-<div class="section-inner">
-<div class="section-tag">Contingut</div>
-<h2 class="section-title">El temari oficial complet</h2>
-<p class="section-desc">Cobertura completa dels tres blocs de les oposicions dels Mossos d'Esquadra, més exàmens reals i simulacres.</p>
-<div class="blocs-grid">
-<div class="bloc bloc-a">
-<div class="bloc-tag">Bloc A · Gratis</div>
-<div class="bloc-name">Àmbit de l'entorn</div>
-<div class="bloc-info">7 temes · 1.450 preguntes</div>
-<div class="bloc-topics">
-<div class="bloc-topic">A.1. Història de Catalunya (Part I)</div>
-<div class="bloc-topic">A.2. Història de Catalunya (Part II)</div>
-<div class="bloc-topic">A.3. Història de la policia a Catalunya</div>
-<div class="bloc-topic">A.4. Àmbit sociolingüístic</div>
-<div class="bloc-topic">A.5. Geografia de Catalunya</div>
-<div class="bloc-topic">A.6. Entorn social a Catalunya</div>
-<div class="bloc-topic">A.7. Les tecnologies de la informació</div>
-</div>
-</div>
-<div class="bloc bloc-b">
-<div class="bloc-tag">Bloc B · Premium</div>
-<div class="bloc-name">Àmbit institucional</div>
-<div class="bloc-info">8 temes · 1.700 preguntes</div>
-<div class="bloc-topics">
-<div class="bloc-topic">B.1. L'Estatut d'autonomia de Catalunya</div>
-<div class="bloc-topic">B.2. Les institucions polítiques de Catalunya</div>
-<div class="bloc-topic">B.3. L'ordenament jurídic de l'Estat</div>
-<div class="bloc-topic">B.4. Els drets humans i constitucionals</div>
-<div class="bloc-topic">B.5. Les institucions polítiques de l'Estat</div>
-<div class="bloc-topic">B.6. Els òrgans jurisdiccionals</div>
-<div class="bloc-topic">B.7. L'organització territorial de l'Estat</div>
-<div class="bloc-topic">B.8. La Unió Europea</div>
-</div>
-</div>
-<div class="bloc bloc-c">
-<div class="bloc-tag">Bloc C · Premium</div>
-<div class="bloc-name">Àmbit policial</div>
-<div class="bloc-info">5 temes · 800 preguntes</div>
-<div class="bloc-topics">
-<div class="bloc-topic">C.1. Competències de la Generalitat</div>
-<div class="bloc-topic">C.2. El Departament d'Interior</div>
-<div class="bloc-topic">C.3. La coordinació policial</div>
-<div class="bloc-topic">C.4. El marc legal de la seguretat</div>
-<div class="bloc-topic">C.5. El codi deontològic policial</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- FAQ -->
-<section class="section">
-<div class="section-inner">
-<div class="section-tag">Dubtes freqüents</div>
-<h2 class="section-title">Abans de començar</h2>
-<p class="section-desc">El que més ens pregunten els futurs Mossos.</p>
-<div class="faq-list">
-<div class="faq-item">
-<div class="faq-q">Què inclou el Bloc A gratuït?</div>
-<div class="faq-a">Els 7 temes complets del Bloc A — 1.450 preguntes — gratis per sempre, sense targeta ni compromís.</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">El contingut és oficial?</div>
-<div class="faq-a">Les preguntes es contrasten amb el temari oficial de la convocatòria, el DOGC i la normativa vigent (Estatut, lleis de la Policia de la Generalitat, Codi d'Ètica de la Policia de Catalunya).</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Puc cancel·lar quan vulgui?</div>
-<div class="faq-a">Sí. Pots cancel·lar la subscripció Premium en qualsevol moment, sense penalització ni permanència.</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Funciona sense connexió a internet?</div>
-<div class="faq-a">Sí, un cop carregada, l'app funciona offline. Pots estudiar al metro, al bus o on sigui.</div>
-</div>
-<div class="faq-item">
-<div class="faq-q">Necessito instal·lar alguna app des d'una botiga?</div>
-<div class="faq-a">No. MossosPrep funciona directament des del navegador, al mòbil, a la tauleta o a l'ordinador.</div>
-</div>
-</div>
-</div>
-</section>
-<!-- PRICING -->
-<section class="section bg-light" id="preu">
-<div class="section-inner">
-<div class="section-tag" style="text-align:center">Preu</div>
-<h2 class="section-title" style="text-align:center;margin-bottom:40px">Senzill i sense sorpreses</h2>
-<div class="pricing-card">
-<div class="pricing-badge">✨ 1 dia de prova gratis</div>
-<div class="pricing-amount">4,99€</div>
-<div class="pricing-period">al mes</div>
-<div class="pricing-trial">Comença amb <span>1 dia gratis</span>, sense compromís.</div>
-<ul class="pricing-feats">
-<li class="pricing-feat">Bloc A complet — gratis per sempre</li>
-<li class="pricing-feat">Bloc B — Àmbit institucional (1.700 preguntes)</li>
-<li class="pricing-feat">Bloc C — Àmbit policial (800 preguntes)</li>
-<li class="pricing-feat">14 exàmens reals de convocatòries oficials</li>
-<li class="pricing-feat">Simulacres cronometrats oficials</li>
-<li class="pricing-feat">Estadístiques i preguntes febles</li>
-<li class="pricing-feat">Sense anuncis</li>
-</ul>
-<a class="btn-primary" href="https://mossosprep.cat/app.html" style="width:100%;justify-content:center;font-size:16px;padding:18px">
-        🛡️ Accedir a l'app
-      </a>
-<p style="font-size:12px;color:#94a3b8;margin-top:12px;text-align:center">Pagament segur amb Stripe · Targeta o Bizum · Cancel·la quan vulguis</p>
-</div>
-</div>
-</section>
-<!-- FOOTER -->
-<footer>
-<div class="footer-inner">
-<div class="footer-grid">
-<div>
-<div class="footer-brand-logo">Mossos<span>Prep</span></div>
-<p class="footer-brand-desc">Preparació oficial per a les oposicions dels Mossos d'Esquadra de Catalunya. Tests oficials, exàmens reals i simulacres cronometrats.</p>
-<div class="footer-contact">
-<p>📧 <a href="mailto:rltc.daniel@gmail.com">rltc.daniel@gmail.com</a></p>
-</div>
-</div>
-<div>
-<div class="footer-heading">App</div>
-<ul class="footer-links">
-<li><a href="https://mossosprep.cat/app.html">Accedir a l'app</a></li>
-<li><a href="https://mossosprep.cat/app.html#bloc-a">Bloc A — Gratis</a></li>
-<li><a href="https://buy.stripe.com/8x2eVc0VceJL95kdoQawo01">Subscripció Premium</a></li>
-<li><a href="https://mossosprep.cat/cancel.html">Cancel·lar subscripció</a></li>
-</ul>
-</div>
-<div>
-<div class="footer-heading">Blog</div>
-<ul class="footer-links">
-<li><a href="https://mossosprep.cat/blog-oposicions-mossos-2026.html">Convocatòria 2026</a></li>
-<li><a href="https://mossosprep.cat/blog-requisits-mossos-esquadra.html">Requisits</a></li>
-<li><a href="https://mossosprep.cat/blog-examen-teorics-mossos.html">L'examen teòric</a></li>
-<li><a href="https://mossosprep.cat/blog-sou-mossos-esquadra.html">Sou i condicions</a></li>
-<li><a href="https://mossosprep.cat/blog-course-navette-mossos.html">Course navette</a></li>
-<li><a href="https://mossosprep.cat/blog.html">Tots els articles →</a></li>
-</ul>
-</div>
-<div>
-<div class="footer-heading">Informació</div>
-<ul class="footer-links">
-<li><a href="https://mossosprep.cat/sobre.html">Sobre MossosPrep</a></li>
-<li><a href="https://mossosprep.cat/contacte.html">Contacte</a></li>
-<li><a href="https://mossosprep.cat/privacy.html">Política de privacitat</a></li>
-<li><a href="https://mossosprep.cat/avis-legal.html">Avís Legal</a></li>
-<li><a href="https://mossosprep.cat/cancel.html">Cancel·lar subscripció</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© 2026 MossosPrep — Preparació oficial per a les oposicions dels Mossos d'Esquadra</span>
-<span><a href="https://mossosprep.cat/privacy.html">Privacitat</a> · <a href="https://mossosprep.cat/avis-legal.html">Avís Legal</a> · <a href="https://mossosprep.cat/cancel.html">Cancel·lar</a></span>
-</div>
-</div>
-</footer>
-<script defer="" src="/cookie-consent.js"></script>
+<div class="wrap"><dl class="home-stats">
+<div><dt>4.790+</dt><dd>Preguntes oficials</dd></div><div><dt>3</dt><dd>Blocs temàtics</dd></div><div><dt>14</dt><dd>Exàmens reals</dd></div><div><dt>100%</dt><dd>Temari oficial</dd></div>
+</dl></div></section>
+<div class="notice-strip"><div class="wrap"><p><strong>Convocatòria 46/26:</strong> 1.587 places · 1a prova prevista el 17 d’octubre de 2026</p><a href="/blog-oposicions-mossos-2026.html">Més informació</a></div></div>
+
+<section class="home-section" id="temari"><div class="wrap">
+<div class="section-head"><h2>El temari oficial complet</h2><p>Cobertura completa dels tres blocs de les oposicions dels Mossos d'Esquadra, més exàmens reals i simulacres.</p></div>
+<div class="bloc-cols"><div class="bloc-col bloc-a"><div class="bloc-col-head"><h3>Bloc A</h3><span class="access free">Gratis</span></div><p class="bloc-col-name">Àmbit de l'entorn</p><p class="bloc-col-info">7 temes · 1.450 preguntes</p><ul><li>A.1. Història de Catalunya (Part I)</li><li>A.2. Història de Catalunya (Part II)</li><li>A.3. Història de la policia a Catalunya</li><li>A.4. Àmbit sociolingüístic</li><li>A.5. Geografia de Catalunya</li><li>A.6. Entorn social a Catalunya</li><li>A.7. Les tecnologies de la informació</li></ul></div><div class="bloc-col bloc-b"><div class="bloc-col-head"><h3>Bloc B</h3><span class="access ">Premium</span></div><p class="bloc-col-name">Àmbit institucional</p><p class="bloc-col-info">8 temes · 1.700 preguntes</p><ul><li>B.1. L'Estatut d'autonomia de Catalunya</li><li>B.2. Les institucions polítiques de Catalunya</li><li>B.3. L'ordenament jurídic de l'Estat</li><li>B.4. Els drets humans i constitucionals</li><li>B.5. Les institucions polítiques de l'Estat</li><li>B.6. Els òrgans jurisdiccionals</li><li>B.7. L'organització territorial de l'Estat</li><li>B.8. La Unió Europea</li></ul></div><div class="bloc-col bloc-c"><div class="bloc-col-head"><h3>Bloc C</h3><span class="access ">Premium</span></div><p class="bloc-col-name">Àmbit policial</p><p class="bloc-col-info">5 temes · 800 preguntes</p><ul><li>C.1. Competències de la Generalitat</li><li>C.2. El Departament d'Interior</li><li>C.3. La coordinació policial</li><li>C.4. El marc legal de la seguretat</li><li>C.5. El codi deontològic policial</li></ul></div></div>
+</div></section>
+
+<section class="home-section alt"><div class="wrap">
+<div class="section-head"><h2>Tot el que necessites per aprovar</h2><p>Dissenyat específicament per a les oposicions dels Mossos d'Esquadra, amb el temari oficial i les eines d'estudi més efectives.</p></div>
+<div class="feature-grid"><div class="feature"><h3>Tests oficials</h3><p>+4.700 preguntes extretes del temari oficial dels Blocs A, B i C, actualitzades i revisades.</p></div><div class="feature"><h3>Simulacre cronometrat</h3><p>30 preguntes en 35 minuts amb les mateixes condicions que l'examen real. Puntuació 0-10, mínim 4.</p></div><div class="feature"><h3>Estadístiques i evolució</h3><p>Segueix el teu progrés per tema amb nota mitjana i gràfic d'evolució dels últims tests.</p></div><div class="feature"><h3>Preguntes febles</h3><p>L'app detecta on falles més i crea un test personalitzat automàticament per reforçar-ho.</p></div><div class="feature"><h3>14 exàmens reals</h3><p>Exàmens de les convocatòries 2019, 2021, 2022, 2023 i 2024. El millor material de preparació disponible.</p></div><div class="feature"><h3>Funciona offline</h3><p>Un cop carregada, l'app funciona sense connexió. Estudia al metro, al bus o on sigui.</p></div></div>
+</div></section>
+
+<section class="home-section" id="blog"><div class="wrap">
+<div class="section-head row"><div><h2>Tot el que necessites saber sobre les oposicions dels Mossos d'Esquadra</h2><p>Els 6 articles més recents: guies, informació oficial i recursos pensats per resoldre dubtes i posar a prova el que has après amb MossosPrep.</p></div><a class="btn secondary" href="/blog.html">Veure tots els articles</a></div>
+<div class="post-grid"><article class="post"><p class="post-tag">Exàmens oficials</p><h3 class="post-title"><a href="/blog-examens-anteriors-mossos.html">Exàmens Anteriors Mossos: Models Oficials i Respostes</a></h3><p class="post-desc">On trobar els models de la Generalitat, com simular l'examen i com corregir els errors per millorar de veritat.</p><p class="post-meta"><span>18 ag. 2026</span><span>4 min de lectura</span></p></article><article class="post"><p class="post-tag">Notes i resultats</p><h3 class="post-title"><a href="/blog-nota-tall-mossos.html">Nota de Tall Mossos 2026: Quina És i Com Funciona</a></h3><p class="post-desc">Estat actual de la 46/26, diferència entre nota mínima i tall, referència oficial 46/24 i com interpretar les puntuacions.</p><p class="post-meta"><span>18 ag. 2026</span><span>5 min de lectura</span></p></article><article class="post"><p class="post-tag">Proves físiques</p><h3 class="post-title"><a href="/blog-proves-fisiques-mossos.html">Proves Físiques Mossos 2026: Barems Oficials i Com Preparar-les</a></h3><p class="post-desc">Barems actuals de circuit, press banca i course navette, nota mínima, intents i una estratègia de preparació completa.</p><p class="post-meta"><span>18 ag. 2026</span><span>5 min de lectura</span></p></article><article class="post"><p class="post-tag">Bloc B</p><h3 class="post-title"><a href="/blog-estatut-autonomia-mossos.html">L'Estatut d'Autonomia de Catalunya: Guia per al Bloc B</a></h3><p class="post-desc">Aprovació, estructura i competències de l'Estatut de 2006, amb les dates clau que més surten a l'examen del Bloc B.</p><p class="post-meta"><span>14 jul. 2026</span><span>3 min de lectura</span></p></article><article class="post"><p class="post-tag">Bloc B</p><h3 class="post-title"><a href="/blog-unio-europea-mossos.html">La Unió Europea: Institucions Bàsiques per al Bloc B</a></h3><p class="post-desc">Parlament, Consell, Comissió i Consell Europeu explicats sense confusions, amb les diferències que sol preguntar l'examen.</p><p class="post-meta"><span>14 jul. 2026</span><span>3 min de lectura</span></p></article><article class="post"><p class="post-tag">Bloc C</p><h3 class="post-title"><a href="/blog-codi-etic-policia-mossos.html">El Codi d'Ètica de la Policia de Catalunya: Guia per al Bloc C</a></h3><p class="post-desc">Origen, principis i estructura del Codi d'Ètica aprovat el 2015, aplicable als Mossos d'Esquadra i les policies locals.</p><p class="post-meta"><span>14 jul. 2026</span><span>3 min de lectura</span></p></article></div>
+<nav class="key-guides" aria-label="Guies clau"><p>Guies clau</p><a href="/blog-oposicions-mossos-2026.html">Convocatòria 2026</a><a href="/blog-requisits-mossos-esquadra.html">Requisits</a><a href="/blog-examen-teorics-mossos.html">L'examen teòric</a><a href="/blog-sou-mossos-esquadra.html">Sou i condicions</a><a href="/blog-course-navette-mossos.html">Course navette</a></nav>
+</div></section>
+
+<section class="home-section alt" id="preu"><div class="wrap pricing-grid">
+<div class="section-head"><h2>Abans de començar</h2><p>El que més ens pregunten els futurs Mossos.</p>
+<div class="faq"><details class="question"><summary>Què inclou el Bloc A gratuït?</summary><div class="answer">Els 7 temes complets del Bloc A — 1.450 preguntes — gratis per sempre, sense targeta ni compromís.</div></details><details class="question"><summary>El contingut és oficial?</summary><div class="answer">Les preguntes es contrasten amb el temari oficial de la convocatòria, el DOGC i la normativa vigent (Estatut, lleis de la Policia de la Generalitat, Codi d'Ètica de la Policia de Catalunya).</div></details><details class="question"><summary>Puc cancel·lar quan vulgui?</summary><div class="answer">Sí. Pots cancel·lar la subscripció Premium en qualsevol moment, sense penalització ni permanència.</div></details><details class="question"><summary>Funciona sense connexió a internet?</summary><div class="answer">Sí, un cop carregada, l'app funciona offline. Pots estudiar al metro, al bus o on sigui.</div></details><details class="question"><summary>Necessito instal·lar alguna app des d'una botiga?</summary><div class="answer">No. MossosPrep funciona directament des del navegador, al mòbil, a la tauleta o a l'ordinador.</div></details></div></div>
+<div class="price-box"><p class="price-label">Senzill i sense sorpreses</p><p class="price"><strong>4,99 €</strong> al mes</p><p class="price-trial">1 dia de prova gratis, sense permanència.</p>
+<ul class="checklist"><li>Bloc A complet — gratis per sempre</li><li>Bloc B — Àmbit institucional (1.700 preguntes)</li><li>Bloc C — Àmbit policial (800 preguntes)</li><li>14 exàmens reals de convocatòries oficials</li><li>Simulacres cronometrats oficials</li><li>Estadístiques i preguntes febles</li><li>Sense anuncis</li></ul>
+<a class="btn" href="/app.html">Accedir a l'app</a>
+<p class="price-foot">Pagament segur amb Stripe. Targeta o Bizum. Cancel·la quan vulguis.</p></div>
+</div></section>
+
+<section class="end-cta"><div class="wrap"><div><h2>El Bloc A complet (1.450 preguntes) és gratis per sempre</h2></div><div class="actions"><a class="btn" href="/app.html">Comença ara</a></div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="footer-grid">
+<div><a class="brand" href="/">Mossos<span>Prep</span></a><p>Plataforma independent de preparació de les oposicions dels Mossos d'Esquadra, amb tests basats en el temari oficial, exàmens anteriors i simulacres.</p><p>MossosPrep no està vinculat ni afiliat a la Generalitat de Catalunya ni al Cos de Mossos d'Esquadra.</p></div>
+<div><div class="footer-title">Preparació</div><ul><li><a href="/test-mossos-desquadra.html">Test Mossos</a></li><li><a href="/temari-mossos-desquadra.html">Temari</a></li><li><a href="/examen-mossos-desquadra.html">Examen</a></li><li><a href="/psicotecnics-mossos.html">Psicotècnics</a></li><li><a href="/pla-subprova-aptitudinal.html">Pla subprova aptitudinal</a></li></ul></div>
+<div><div class="footer-title">Oposició</div><ul><li><a href="/convocatoria-mossos-2026.html">Convocatòria 46/26</a></li><li><a href="/dates-examen-mossos.html">Dates de l'examen</a></li><li><a href="/places-mossos-desquadra.html">Places</a></li><li><a href="/requisits-mossos-desquadra.html">Requisits</a></li><li><a href="/biodata-entrevista-mossos.html">Biodata i entrevista</a></li></ul></div>
+<div><div class="footer-title">Informació</div><ul><li><a href="/blog.html">Blog</a></li><li><a href="/sobre.html">Sobre MossosPrep</a></li><li><a href="/contacte.html">Contacte</a></li><li><a href="/privacy.html">Privacitat</a></li><li><a href="/avis-legal.html">Avís legal</a></li><li><a href="/cancel.html">Cancel·lar subscripció</a></li></ul></div>
+</div><div class="footer-bottom">© 2026 MossosPrep. La informació oficial de la Generalitat preval sempre en cas de discrepància.</div></div></footer>
+<script>
+(function(){var q=document.querySelector('.demo-q');if(!q)return;var ok=+q.dataset.correct,done=false;
+q.querySelectorAll('.demo-opt').forEach(function(b,i){b.addEventListener('click',function(){if(done)return;done=true;
+q.querySelectorAll('.demo-opt').forEach(function(o,j){o.disabled=true;if(j===ok)o.classList.add('is-right');});
+if(i!==ok)b.classList.add('is-wrong');q.querySelector('.demo-exp').hidden=false;});});})();
+</script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>

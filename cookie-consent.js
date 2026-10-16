@@ -8,18 +8,20 @@
   var style = document.createElement('style');
   style.textContent = `
     #mp-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;
-      background:#003087;color:#fff;padding:16px 20px;font-family:'DM Sans',Arial,sans-serif;
-      display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;
-      box-shadow:0 -2px 12px rgba(0,0,0,.2);font-size:14px;line-height:1.5;}
-    #mp-cookie-banner p{margin:0;flex:1 1 280px;max-width:640px;}
-    #mp-cookie-banner a{color:#f59e0b;text-decoration:underline;}
+      background:#071C45;color:#fff;border-top:4px solid #D3121C;padding:16px 20px;
+      font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:center;
+      font-size:15px;line-height:1.5;}
+    #mp-cookie-banner p{margin:0;flex:1 1 280px;max-width:680px;color:#D6E0F2;}
+    #mp-cookie-banner a{color:#FFB71B;text-decoration:underline;}
     #mp-cookie-banner .mp-btns{display:flex;gap:8px;flex:0 0 auto;}
-    #mp-cookie-banner button{cursor:pointer;border:none;border-radius:6px;padding:10px 18px;
-      font-weight:600;font-size:14px;font-family:inherit;}
-    #mp-cookie-accept{background:#f59e0b;color:#1a1a1a;}
-    #mp-cookie-reject{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)!important;}
-    @media (max-width:480px){#mp-cookie-banner{flex-direction:column;align-items:stretch;text-align:center;}
-      #mp-cookie-banner .mp-btns{justify-content:center;}}
+    #mp-cookie-banner button{cursor:pointer;border:2px solid transparent;border-radius:6px;padding:10px 18px;
+      font-weight:700;font-size:15px;font-family:inherit;}
+    #mp-cookie-accept{background:#FFB71B;color:#071C45;}
+    #mp-cookie-reject{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)!important;}
+    #mp-cookie-banner button:focus-visible{outline:3px solid #FFB71B;outline-offset:2px;}
+    @media (max-width:480px){#mp-cookie-banner{flex-direction:column;align-items:stretch;text-align:left;}
+      #mp-cookie-banner .mp-btns{justify-content:stretch;}#mp-cookie-banner button{flex:1}}
   `;
   document.head.appendChild(style);
 
