@@ -1,4 +1,4 @@
-const CACHE = 'mossosprep-v5';
+const CACHE = 'mossosprep-v6';
 const ASSETS = ['./index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', e => {
