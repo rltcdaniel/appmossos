@@ -1,4 +1,4 @@
-const CACHE = 'mossosprep-v7';
+const CACHE = 'mossosprep-v8';
 const ASSETS = ['./index.html', './manifest.webmanifest'];
 
 self.addEventListener('install', e => {
@@ -13,7 +13,7 @@ self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
       .then(keys => Promise.all(
-        keys.filter(k => k !== CACHE).map(k => caches.delete(k))
+        keys.filter(k => k !== CACHE && !k.startsWith('mp-data')).map(k => caches.delete(k))  // mp-data-*: preguntes Premium desades
       ))
       .then(() => self.clients.claim())
   );
