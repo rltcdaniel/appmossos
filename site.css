@@ -676,3 +676,7 @@ details.question .answer{padding:0 0 16px;color:var(--ink-2)}
 @media (max-width:600px){.plan-includes,.comp-cols{grid-template-columns:1fr}.comp-card{padding:16px 14px}.plan-price strong{font-size:48px}}
 @media print{.site-header,.site-footer,.page-aside,.end-cta,.q-head,.plan-buy{display:none!important}}
 .key-badge{white-space:nowrap}
+
+/* Logotip al costat del nom */
+.site-header .brand{display:inline-flex;align-items:center}
+.site-header .brand::before{content:"";flex:0 0 32px;width:32px;height:32px;background:url(/logo.svg) center/contain no-repeat;border-radius:7px;margin-right:9px}

@@ -17,7 +17,7 @@
 <title>MossosPrep — Prepara les Oposicions dels Mossos d'Esquadra</title>
 <meta name="description" content="MossosPrep — App de preparació per a les oposicions dels Mossos d'Esquadra amb +4.700 preguntes, exàmens reals i simulacres.">
 <meta name="robots" content="noindex,follow">
-<meta name="theme-color" content="#003087">
+<meta name="theme-color" content="#0A2557">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mossos OPE">
@@ -1188,6 +1188,9 @@ if ('serviceWorker' in navigator) {
   .premium-lock-title,.premium-lock-desc,.premium-lock-price,.premium-lock-price-sub,
   .sub-page h2,.sub-page .sub-lead{text-align:center}
   .section-title{margin-top:14px}
+  /* Logotip */
+  .hero-logo{width:44px;height:44px;border-radius:10px;display:block}
+  .splash-logo{width:88px;height:88px;border-radius:20px;margin-bottom:20px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
   /* Portada centrada */
   .hero{text-align:center}
   .hero::before{background:linear-gradient(to bottom,rgba(7,28,69,.9) 0%,rgba(7,28,69,.82) 100%)}
@@ -1226,6 +1229,7 @@ if ('serviceWorker' in navigator) {
 
 <!-- ══════════════════════════════════════════════════ SPLASH ══════════ -->
 <div id="splash" class="splash">
+  <img class="splash-logo" src="/logo.svg" alt="" width="88" height="88">
   <div class="splash-name">Mossos<span>Prep</span></div>
   <div class="splash-tagline">La preparació definitiva per aprovar les oposicions dels Mossos d'Esquadra de Catalunya.</div>
   <button class="splash-btn" onclick="closeSplash()">Començar ara</button>
@@ -1249,11 +1253,7 @@ if ('serviceWorker' in navigator) {
   <div class="hero">
     <div style="max-width:640px;margin:0 auto">
       <div class="hero-logo-wrap">
-        <div class="hero-icon">
-          <svg fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2" width="26" height="26">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
-          </svg>
-        </div>
+        <img class="hero-logo" src="/logo.svg" alt="" width="44" height="44">
         <div class="hero-subtitle">Mossos<span>Prep</span></div>
       </div>
       <h1 class="font-display">Prepara't.<br><em>El teu futur<br>comença aquí.</em></h1>
