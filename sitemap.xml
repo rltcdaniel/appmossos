@@ -98,7 +98,7 @@
   </url>
   <url>
     <loc>https://mossosprep.cat/blog-psicotecnics-mossos.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -284,5 +284,17 @@
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mossosprep.cat/trucs-proves-fisiques-mossos.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mossosprep.cat/test-competencies-mossos.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

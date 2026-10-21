@@ -566,3 +566,40 @@ details.question .answer{padding:0 0 16px;color:var(--ink-2)}
   .calc-next .actions .btn{width:100%}
 }
 @media (prefers-reduced-motion:reduce){.gauge-fill,.gauge-you{transition:none}}
+
+/* ── Calculadora de la prova física i fitxa de competències ── */
+.calc-seg{display:inline-flex;border:1.5px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:4px}
+.calc-seg input{position:absolute;opacity:0;pointer-events:none}
+.calc-seg label{padding:9px 20px;font-weight:650;font-size:15.5px;color:var(--ink-2);cursor:pointer;background:var(--white)}
+.calc-seg label:not(:first-of-type){border-left:1.5px solid var(--line)}
+.calc-seg input:checked+label{background:var(--navy-700);color:#fff}
+.calc-seg input:focus-visible+label{outline:3px solid var(--amber);outline-offset:-3px}
+.calc-row label small{font-weight:500;color:var(--muted);font-size:13px}
+.calc-hints{margin:4px 0 0;padding:12px 14px;border-radius:var(--radius-sm);background:rgba(255,255,255,.07)}
+.calc-hints strong{display:block;font-size:14.5px;color:#AFC0DE;font-weight:600;margin-bottom:4px}
+.calc-hints ul{margin:0;padding-left:18px}
+.calc-hints li{font-size:15px;color:#fff;margin:2px 0}
+.calc-total strong.is-ok{color:#7FE0A7}
+.calc-total strong.is-ko{color:#FF9EA3}
+.key-badge{display:inline-block;font-size:12px;font-weight:700;color:var(--red-700);background:var(--red-50);border-radius:4px;padding:1px 6px;margin-left:4px;vertical-align:1px}
+.fitxa{margin:1.2em 0 2em;border:1px solid var(--line);border-top:6px solid var(--navy-700);border-radius:var(--radius);background:var(--white);padding:18px 18px 12px}
+.fitxa-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.fitxa-head p{margin:0;font-size:15px;color:var(--muted)}
+.fitxa-progress{font-weight:740;color:var(--navy-800);font-size:16px}
+.fitxa-bar{height:8px;border-radius:4px;background:var(--line-2);overflow:hidden;margin-bottom:14px}
+.fitxa-bar span{display:block;height:100%;width:0;background:var(--amber);transition:width .2s}
+.fitxa details{border-top:1px solid var(--line-2);padding:10px 0}
+.fitxa summary{cursor:pointer;font-weight:700;color:var(--navy-800);font-size:16px;list-style:none;display:flex;align-items:center;gap:8px}
+.fitxa summary::-webkit-details-marker{display:none}
+.fitxa summary::before{content:"";flex:0 0 18px;height:18px;border:2px solid var(--line);border-radius:4px;background:var(--white)}
+.fitxa details.is-done summary::before{background:var(--green);border-color:var(--green);box-shadow:inset 0 0 0 3px var(--white)}
+.fitxa details p{font-size:14.5px;color:var(--muted);margin:8px 0 6px}
+.fitxa textarea{width:100%;min-height:96px;font:inherit;font-size:15.5px;line-height:1.5;padding:10px 12px;border:1.5px solid var(--line);border-radius:var(--radius-sm);resize:vertical;color:var(--ink)}
+.fitxa textarea:focus{outline:none;border-color:var(--navy-600);box-shadow:0 0 0 3px var(--blue-100)}
+.fitxa-actions{display:flex;flex-wrap:wrap;gap:10px;padding-top:12px;border-top:1px solid var(--line-2)}
+.fitxa-actions .btn{font-size:15px;padding:10px 16px}
+.fitxa-note{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+.item-card{margin:1em 0;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--navy-600);border-radius:var(--radius-sm);background:var(--white)}
+.item-card .item-q{font-weight:700;color:var(--navy-800);font-size:17px;margin:0 0 8px}
+.item-card p{margin:.3em 0;font-size:15.5px}
+@media (max-width:600px){.calc-seg label{padding:9px 16px}.fitxa{padding:16px 14px 10px}}
