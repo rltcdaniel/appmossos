@@ -603,3 +603,76 @@ details.question .answer{padding:0 0 16px;color:var(--ink-2)}
 .item-card .item-q{font-weight:700;color:var(--navy-800);font-size:17px;margin:0 0 8px}
 .item-card p{margin:.3em 0;font-size:15.5px}
 @media (max-width:600px){.calc-seg label{padding:9px 16px}.fitxa{padding:16px 14px 10px}}
+
+/* ── Plans de pagament (pàgina de venda i guia desbloquejada) ── */
+.plan-includes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:1.2em 0 1.6em}
+.plan-includes>div{border:1px solid var(--line);border-top:4px solid var(--navy-700);border-radius:var(--radius);padding:14px 16px;background:var(--white)}
+.plan-includes strong{display:block;color:var(--navy-800);font-size:16.5px;margin-bottom:4px}
+.plan-includes p{margin:0;font-size:15px;color:var(--ink-2)}
+.plan-buy{margin:1.6em 0;padding:24px 22px;border-radius:var(--radius);background:var(--navy-800);color:#fff;border-bottom:6px solid var(--red)}
+.plan-buy h2{color:#fff;margin:0 0 6px}
+.plan-buy p{color:#D6E0F2;margin:0 0 10px}
+.plan-price{display:flex;align-items:baseline;gap:10px;margin:8px 0 14px}
+.plan-price strong{font-size:56px;line-height:1;font-weight:830;font-stretch:80%}
+.plan-price span{color:#AFC0DE;font-size:16px}
+.plan-buy .btn{font-size:17px;padding:14px 22px}
+.plan-buy-note{font-size:14px!important;color:#AFC0DE!important;margin-top:12px!important}
+.plan-recover{margin:1.4em 0;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+.plan-recover h3{margin:0 0 4px;font-size:18px}
+.plan-recover p{font-size:15px;color:var(--ink-2);margin:0 0 10px}
+.plan-recover form{display:flex;flex-wrap:wrap;gap:10px}
+.plan-recover input{flex:1 1 220px;font:inherit;font-size:16px;padding:10px 12px;border:1.5px solid var(--line);border-radius:var(--radius-sm)}
+.plan-recover input:focus{outline:none;border-color:var(--navy-600);box-shadow:0 0 0 3px var(--blue-100)}
+.plan-recover button{font-size:15.5px;padding:10px 18px}
+.plan-msg{margin:10px 0 0;font-size:15px;font-weight:600}
+.plan-msg.is-ko{color:var(--red-700)}.plan-msg.is-ok{color:var(--green)}.plan-msg.is-wait{color:var(--navy-700)}
+.plan-status{margin:0 0 1.2em;padding:14px 16px;border-radius:var(--radius-sm);font-weight:600;font-size:15.5px;background:var(--blue-50);color:var(--navy-800)}
+.plan-status.is-ko{background:var(--red-50);color:var(--red-700)}
+.plan-sample{margin:1.4em 0;position:relative}
+.plan-sample-label{display:inline-block;font-size:13px;font-weight:700;color:var(--amber-800);background:var(--amber-50);border-radius:4px;padding:2px 8px;margin-bottom:6px}
+.guide-welcome{padding:20px;border-radius:var(--radius);background:var(--green-50);border:1px solid #CBE8D6;margin-bottom:1.4em}
+.guide-welcome h2{margin:2px 0 8px}
+.guide-welcome p{margin:0;color:var(--ink-2)}
+.guide-kicker{font-size:14px;font-weight:700;color:var(--green)!important;margin:0!important}
+.comp-card{margin:1.2em 0 1.6em;padding:18px 20px;border:1px solid var(--line);border-top:4px solid var(--navy-700);border-radius:var(--radius);background:var(--white)}
+.comp-card h3{margin:0 0 8px;font-size:21px}
+.comp-card h4{margin:14px 0 6px;font-size:16px;color:var(--navy-800)}
+.comp-card>p{margin:0;font-size:16px}
+.comp-card ul{margin:0 0 4px;font-size:15.5px}
+.comp-cols{display:grid;grid-template-columns:1fr 1fr;gap:4px 22px}
+.xlist{list-style:none;padding-left:0!important}
+.xlist li{position:relative;padding-left:26px;margin:.35em 0}
+.xlist li::before{content:"";position:absolute;left:5px;top:.55em;width:11px;height:11px;background:linear-gradient(45deg,transparent 42%,var(--red) 42%,var(--red) 58%,transparent 58%),linear-gradient(-45deg,transparent 42%,var(--red) 42%,var(--red) 58%,transparent 58%)}
+.comp-prep{margin:12px 0 0!important;padding:10px 12px;border-radius:var(--radius-sm);background:var(--amber-50);font-size:15.5px!important}
+.quiz{margin:1em 0 2em}
+.q-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;background:var(--paper)}
+.q-legend{font-size:13.5px;color:var(--muted)}
+.q-count{font-weight:740;color:var(--navy-800)}
+.q-item{padding:12px 0;border-top:1px solid var(--line-2)}
+.q-item p{margin:0 0 8px;font-size:16px;font-weight:600;color:var(--ink)}
+.q-scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;max-width:360px}
+.q-scale input{position:absolute;opacity:0;pointer-events:none}
+.q-scale label{display:flex;align-items:center;justify-content:center;height:40px;border:1.5px solid var(--line);border-radius:var(--radius-sm);font-weight:700;color:var(--ink-2);cursor:pointer;background:var(--white)}
+.q-scale label:hover{border-color:var(--navy-600)}
+.q-scale input:checked+label{background:var(--navy-700);border-color:var(--navy-700);color:#fff}
+.q-scale input:focus-visible+label{outline:3px solid var(--amber);outline-offset:1px}
+.q-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.q-result{margin-top:16px;padding:20px;border-radius:var(--radius);background:var(--navy-800);color:#fff}
+.q-result h3{color:#fff;margin:0 0 4px}
+.q-result>p{color:#D6E0F2;margin:0 0 12px;font-size:15px}
+.q-bars{display:grid;gap:8px;margin:12px 0}
+.q-bar{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:4px 10px;align-items:center}
+.q-bar span{font-size:14.5px;color:#fff}
+.q-bar b{font-size:16px;text-align:right;font-variant-numeric:tabular-nums}
+.q-bar i{grid-column:1/-1;height:8px;border-radius:4px;background:rgba(255,255,255,.14);position:relative;overflow:hidden}
+.q-bar i::after{content:"";position:absolute;inset:0;width:var(--w);background:#7FE0A7;border-radius:4px}
+.q-bar.is-low i::after{background:#FF9EA3}
+.q-bar.is-mid i::after{background:var(--amber)}
+.q-flags{display:grid;gap:8px;margin-top:12px}
+.q-flag{padding:10px 12px;border-radius:var(--radius-sm);background:rgba(255,255,255,.08);font-size:15px;color:#fff}
+.q-flag strong{display:block;margin-bottom:2px}
+.q-flag.is-ko{box-shadow:inset 4px 0 0 #FF9EA3}.q-flag.is-mid{box-shadow:inset 4px 0 0 var(--amber)}.q-flag.is-ok{box-shadow:inset 4px 0 0 #7FE0A7}
+.q-result a{color:#fff}
+@media (max-width:600px){.plan-includes,.comp-cols{grid-template-columns:1fr}.comp-card{padding:16px 14px}.plan-price strong{font-size:48px}}
+@media print{.site-header,.site-footer,.page-aside,.end-cta,.q-head,.plan-buy{display:none!important}}
+.key-badge{white-space:nowrap}
