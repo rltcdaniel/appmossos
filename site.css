@@ -736,3 +736,25 @@ details.question .answer{padding:0 0 16px;color:var(--ink-2)}
 .mostra details summary{cursor:pointer;font-weight:650;color:var(--navy-700);font-size:15px}
 .mostra details p{margin:6px 0 0;padding:8px 12px;border-radius:var(--radius-sm);background:var(--green-50);font-size:15px}
 @media (max-width:600px){.tema{padding:16px 14px 6px}.tema h2{font-size:21px}}
+/* Psicotècnics: exercicis interactius */
+.prose .ps svg{margin:0}
+.ps-series{display:block;margin-top:8px;font-size:21px;font-weight:760;letter-spacing:.02em;color:var(--navy-700);font-variant-numeric:tabular-nums}
+.ps-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;font-size:20px}
+.ps-text{display:block;margin-top:8px;padding:10px 12px;border-left:3px solid var(--line);background:var(--paper);font-weight:500;font-size:16px;color:var(--ink-2)}
+.ps-pairs{display:grid;gap:4px;margin-top:8px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:600;font-size:16px;color:var(--navy-700)}
+.ps-pairs span{display:block}
+.ps-fig{margin:0 0 12px}
+.ps-seq{display:flex;flex-wrap:wrap;gap:8px}
+.ps-cell{width:72px;height:72px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:6px;background:#fff}
+.ps-cell svg{width:60px;height:60px;display:block}
+.ps-ask{font-size:30px;font-weight:800;color:var(--navy-700);background:var(--paper)}
+.ps-model{border:2px solid var(--navy-600)}
+.ps-fig>svg{display:block;height:auto;max-width:100%}
+.ps-fig>.fig-matrix{width:210px}
+.ps-fig>.fig-net{width:150px}
+.ps-fig>.fig-iso{width:150px}
+.mt-opts.ps-figopts{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ps-figopts .mt-opt{flex-direction:column;align-items:center;gap:6px;padding:10px 6px}
+.ps-figopts .mt-opt span{padding:0;display:block;line-height:0}
+.ps-figopts svg{width:56px;height:56px;display:block}
+@media (max-width:600px){.mt-opts.ps-figopts{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-figopts .mt-opt{padding:8px 6px;gap:4px}.ps-figopts svg{width:48px;height:48px}.ps-cell{width:60px;height:60px}.ps-cell svg{width:50px;height:50px}}
