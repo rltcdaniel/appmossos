@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18212325013">
 </script>
@@ -30,7 +31,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6071705220271253" crossorigin="anonymous"></script>
+<script>/* AdSense (anuncis automàtics i missatge de consentiment de Google). No es carrega per als subscriptors Premium. */(function(){try{if(localStorage.getItem('mossos_premium')==='true')return}catch(e){}var s=document.createElement('script');s.async=true;s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6071705220271253';s.crossOrigin='anonymous';document.head.appendChild(s)})();</script>
 <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
@@ -1280,6 +1281,7 @@ if ('serviceWorker' in navigator) {
       <a href="https://mossosprep.cat/blog.html" target="_blank">Blog</a>
       <a href="https://mossosprep.cat/sobre.html" target="_blank">Sobre MossosPrep</a>
       <a href="https://mossosprep.cat/privacy.html" target="_blank">Privacitat</a>
+      <a href="#" data-cookie-prefs>Preferències de cookies</a>
       <a href="https://mossosprep.cat/cancel.html" target="_blank">Cancel·lar subscripció</a>
     </nav>
     <p>Eina de preparació independent. No és un servei oficial de la Generalitat ni del cos de Mossos d'Esquadra.</p>
@@ -1813,6 +1815,7 @@ function closeSplash(target) {
 
 // ─── ADS (only for free users) ───────────────────────────────────────────────
 const AD_CLIENT = 'ca-pub-6071705220271253';
+const AD_SLOT_APP = '__SLOT_APP__';
 
 function renderAd(slotId, format) {
   if (isPremium()) return '';
@@ -1829,7 +1832,7 @@ function renderAd(slotId, format) {
 }
 
 function injectAd(containerId, slotId, format) {
-  if (isPremium()) return;
+  if (isPremium() || !/^\d+$/.test(slotId)) return;
   const el = document.getElementById(containerId);
   if (!el) return;
   el.innerHTML = renderAd(slotId, format);
@@ -2592,11 +2595,11 @@ function showPage(name, skipRender) {
   if (name === 'home') {
     renderHome();
     renderStreak();
-    setTimeout(() => injectAd('ad-home', 'auto', 'auto'), 100);
+    setTimeout(() => injectAd('ad-home', AD_SLOT_APP, 'auto'), 100);
   }
   if (name === 'themes' && !skipRender) renderThemes();
   if (name === 'stats'  && !skipRender) renderStatsPage();
-  if (name === 'results') setTimeout(() => injectAd('ad-results', 'auto', 'auto'), 100);
+  if (name === 'results') setTimeout(() => injectAd('ad-results', AD_SLOT_APP, 'auto'), 100);
 }
 
 // ─── HOME ────────────────────────────────────────────────────────────────────
@@ -3818,5 +3821,6 @@ function stopSimTimer() {
 renderHome();
 if (window.__splashPending) { const t = window.__splashPending; window.__splashPending = null; closeSplash(t === 'subscriber' ? 'subscriber' : undefined); }
 </script>
+<script src="/cookie-consent.js?v=2" defer></script>
 </body>
 </html>
