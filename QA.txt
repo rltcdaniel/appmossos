@@ -1,6 +1,0 @@
-HTML files: 46
-Indexable URLs in sitemap: 42
-app.html body byte-equivalent after </head>: True
-QA issues: 2
- - app.html: H1 count 2
- - convocatoria-mossos-2026.html: contains stale 1.604
