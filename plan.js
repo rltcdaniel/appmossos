@@ -31,8 +31,10 @@
     var toc = document.querySelector('#plan-unlocked .toc-box ol') || document.querySelector('.toc-box ol');
     if (toc && g.toc) toc.innerHTML = g.toc.map(function (t) { return '<li><a href="#' + t[0] + '">' + esc(t[1]) + '</a></li>'; }).join('');
     var card = CFG.asideCard ? document.querySelector('.aside-card') : null;
-    if (card) card.innerHTML = '<strong>Pla desbloquejat</strong><p>El qüestionari i la fitxa es desen en aquest navegador. Imprimeix la fitxa abans de l\'entrevista.</p><a class="btn" href="#g-fitxa">Anar a la fitxa</a>';
-    quiz(g); fitxa(g);
+    if (card) card.innerHTML = g.aside || '<strong>Pla desbloquejat</strong><p>El qüestionari i la fitxa es desen en aquest navegador. Imprimeix la fitxa abans de l\'entrevista.</p><a class="btn" href="#g-fitxa">Anar a la fitxa</a>';
+    if (g.items) quiz(g);
+    if (g.comps) fitxa(g);
+    if (g.js) { try { new Function(g.js)(); } catch (e) { if (window.console) console.error(e); } }
   }
 
   // ── Qüestionari de pràctica ──
