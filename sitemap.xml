@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://mossosprep.cat/biodata-entrevista-mossos.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://mossosprep.cat/blog-oposicions-mossos-2026.html</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://mossosprep.cat/blog.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -128,19 +128,19 @@
   </url>
   <url>
     <loc>https://mossosprep.cat/dates-examen-mossos.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://mossosprep.cat/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mossosprep.cat/places-mossos-desquadra.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -182,7 +182,7 @@
   </url>
   <url>
     <loc>https://mossosprep.cat/sobre.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -220,7 +220,7 @@
 
   <url>
     <loc>https://mossosprep.cat/blog-nota-tall-mossos.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -239,19 +239,19 @@
   </url>
   <url>
     <loc>https://mossosprep.cat/calculadora-nota-tall-mossos.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mossosprep.cat/trucs-proves-fisiques-mossos.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mossosprep.cat/test-competencies-mossos.html</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -286,5 +286,13 @@
   <url>
     <loc>https://mossosprep.cat/blog-constitucio-espanyola-mossos.html</loc>
     <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://mossosprep.cat/calculadora-nota-final-mossos.html</loc>
+    <lastmod>2026-11-25</lastmod>
+  </url>
+  <url>
+    <loc>https://mossosprep.cat/blog-tercera-prova-mossos.html</loc>
+    <lastmod>2026-11-25</lastmod>
   </url>
 </urlset>
